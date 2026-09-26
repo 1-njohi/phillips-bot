@@ -17,6 +17,9 @@ return new class extends Migration {
             $table->string('state_text')->nullable();
             $table->timestamp('recorded_at')->index();
             $table->index(['vehicle_id', 'recorded_at']);
+            $table->enum('source', ['monitor', 'sniper', 'manual'])
+                ->default('monitor')
+                ->after('state_text');
         });
     }
 

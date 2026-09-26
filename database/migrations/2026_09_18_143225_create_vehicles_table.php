@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('wp_modified_at')->nullable();
             $table->string('state')->default('discovered')->index();
             $table->timestamp('last_polled_at')->nullable();
+            $table->integer('increment')->default(5000);
             $table->timestamps();
         });
     }

@@ -1,0 +1,634 @@
+2026-09-25 19:46:19,371 INFO    log file: logs/snipe-1005-1010-20260925-194619.log
+2026-09-25 19:46:19,371 INFO    target: product=1005  slug=isuzu-d-max-2017  max=4,000,000
+2026-09-25 19:46:19,371 INFO    target: product=1010  slug=toyota-corolla-2021  max=4,000,000
+2026-09-25 19:46:19,447 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 19:46:19,449 INFO    clock offset: -0.444s  (rtt=6ms, samples=1)
+2026-09-25 19:46:19,450 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 19:46:19,451 INFO    clock offset: -0.444s  (rtt=2ms, samples=2)
+2026-09-25 19:46:19,451 INFO    [1005] starting  max=4,000,000
+2026-09-25 19:46:19,452 INFO    [1010] starting  max=4,000,000
+2026-09-25 19:46:19,453 INFO    HTTP Request: GET http://localhost:9000/product/isuzu-d-max-2017/ "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,454 INFO    [1005] finish_time=1790354968  remaining=189s
+2026-09-25 19:46:19,454 INFO    HTTP Request: GET http://localhost:9000/product/toyota-corolla-2021/ "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,455 INFO    [1010] finish_time=1790354968  remaining=189s
+2026-09-25 19:46:19,456 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,456 INFO    [1005] initial state=Bid now
+2026-09-25 19:46:19,457 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,458 INFO    [1010] initial state=Bid now
+2026-09-25 19:46:19,458 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,459 INFO    [1005] initial price=1,745,000
+2026-09-25 19:46:19,459 INFO    [1005] monitoring until T-120s...
+2026-09-25 19:46:19,460 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,461 INFO    [1010] initial price=2,290,000
+2026-09-25 19:46:19,461 INFO    [1010] monitoring until T-120s...
+2026-09-25 19:46:19,461 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,463 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,464 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,464 INFO    [1005] tick   1  price=1,745,000  state=Bid now
+2026-09-25 19:46:19,465 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:19,465 INFO    [1010] tick   1  price=2,290,000  state=Bid now
+2026-09-25 19:46:40,876 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:40,883 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:46:40,884 INFO    [1005] tick   2  price=1,760,000  state=Bid now
+2026-09-25 19:46:42,523 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:42,528 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:46:42,530 INFO    [1010] tick   2  price=2,365,000  state=Bid now
+2026-09-25 19:47:00,954 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:00,960 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:00,961 INFO    [1005] tick   3  price=1,780,000  state=Bid now
+2026-09-25 19:47:03,346 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:03,352 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:03,353 INFO    [1010] tick   3  price=2,402,500  state=Bid now
+2026-09-25 19:47:22,727 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:22,733 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:22,734 INFO    [1010] tick   4  price=2,410,000  state=Bid now
+2026-09-25 19:47:23,772 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:23,779 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:23,780 INFO    [1005] tick   4  price=1,820,000  state=Bid now
+2026-09-25 19:47:28,455 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 19:47:28,455 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 19:47:28,456 INFO    clock offset: -0.450s  (rtt=6ms, samples=3)
+2026-09-25 19:47:28,456 INFO    clock offset: -0.450s  (rtt=12ms, samples=4)
+2026-09-25 19:47:28,456 INFO    [1005] === endgame begins ===
+2026-09-25 19:47:28,456 INFO    [1010] === endgame begins ===
+2026-09-25 19:47:28,464 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,465 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,467 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,468 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,468 INFO    [1005] price 1,860,000 (state=Bid now, my_last=—, bids=0)
+2026-09-25 19:47:28,469 INFO    [1010] price 2,432,500 (state=Bid now, my_last=—, bids=0)
+2026-09-25 19:47:28,475 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,477 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:28,478 INFO    [1005] fire 1,865,000 → success=True data={}
+2026-09-25 19:47:28,478 INFO    [1010] fire 2,437,500 → success=True data={}
+2026-09-25 19:47:32,337 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,342 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,344 INFO    [1005] price 1,865,000 (state=Bid now, my_last=1,865,000, bids=1)
+2026-09-25 19:47:32,349 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,350 INFO    [1005] fire 1,870,000 → success=True data={}
+2026-09-25 19:47:32,751 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,755 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,755 INFO    [1010] price 2,437,500 (state=Bid now, my_last=2,437,500, bids=1)
+2026-09-25 19:47:32,761 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:32,761 INFO    [1010] fire 2,442,500 → success=True data={}
+2026-09-25 19:47:36,383 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,389 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,390 INFO    [1010] price 2,442,500 (state=Bid now, my_last=2,442,500, bids=2)
+2026-09-25 19:47:36,396 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,398 INFO    [1010] fire 2,447,500 → success=True data={}
+2026-09-25 19:47:36,762 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,767 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,769 INFO    [1005] price 1,870,000 (state=Bid now, my_last=1,870,000, bids=2)
+2026-09-25 19:47:36,775 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:36,777 INFO    [1005] fire 1,875,000 → success=True data={}
+2026-09-25 19:47:40,448 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,453 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,454 INFO    [1005] price 1,875,000 (state=Bid now, my_last=1,875,000, bids=3)
+2026-09-25 19:47:40,464 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,466 INFO    [1005] fire 1,880,000 → success=True data={}
+2026-09-25 19:47:40,736 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,747 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,750 INFO    [1010] price 2,447,500 (state=Bid now, my_last=2,447,500, bids=3)
+2026-09-25 19:47:40,758 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:40,760 INFO    [1010] fire 2,452,500 → success=True data={}
+2026-09-25 19:47:45,026 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,033 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,034 INFO    [1005] price 1,880,000 (state=Bid now, my_last=1,880,000, bids=4)
+2026-09-25 19:47:45,041 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,042 INFO    [1005] fire 1,885,000 → success=True data={}
+2026-09-25 19:47:45,206 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,214 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,216 INFO    [1010] price 2,452,500 (state=Bid now, my_last=2,452,500, bids=4)
+2026-09-25 19:47:45,225 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:45,226 INFO    [1010] fire 2,457,500 → success=True data={}
+2026-09-25 19:47:48,829 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,837 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,840 INFO    [1005] price 1,910,000 (state=Bid now, my_last=1,885,000, bids=5)
+2026-09-25 19:47:48,863 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,865 INFO    [1005] fire 1,915,000 → success=True data={}
+2026-09-25 19:47:48,904 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,909 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,910 INFO    [1010] price 2,470,000 (state=Bid now, my_last=2,457,500, bids=5)
+2026-09-25 19:47:48,916 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:48,917 INFO    [1010] fire 2,475,000 → success=True data={}
+2026-09-25 19:47:52,413 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,418 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,419 INFO    [1005] price 1,915,000 (state=Bid now, my_last=1,915,000, bids=6)
+2026-09-25 19:47:52,425 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,427 INFO    [1005] fire 1,920,000 → success=True data={}
+2026-09-25 19:47:52,728 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,736 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,739 INFO    [1010] price 2,475,000 (state=Bid now, my_last=2,475,000, bids=6)
+2026-09-25 19:47:52,746 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:52,747 INFO    [1010] fire 2,480,000 → success=True data={}
+2026-09-25 19:47:56,006 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,009 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,010 INFO    [1005] price 1,920,000 (state=Bid now, my_last=1,920,000, bids=7)
+2026-09-25 19:47:56,013 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,014 INFO    [1005] fire 1,925,000 → success=True data={}
+2026-09-25 19:47:56,275 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,276 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,276 INFO    [1010] price 2,480,000 (state=Bid now, my_last=2,480,000, bids=7)
+2026-09-25 19:47:56,278 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:47:56,278 INFO    [1010] fire 2,485,000 → success=True data={}
+2026-09-25 19:48:00,573 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,575 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,575 INFO    [1010] price 2,485,000 (state=Bid now, my_last=2,485,000, bids=8)
+2026-09-25 19:48:00,577 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,577 INFO    [1010] fire 2,490,000 → success=True data={}
+2026-09-25 19:48:00,673 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,675 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,675 INFO    [1005] price 1,925,000 (state=Bid now, my_last=1,925,000, bids=8)
+2026-09-25 19:48:00,677 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:00,678 INFO    [1005] fire 1,930,000 → success=True data={}
+2026-09-25 19:48:04,741 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:04,747 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:04,748 INFO    [1010] price 2,490,000 (state=Bid now, my_last=2,490,000, bids=9)
+2026-09-25 19:48:04,754 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:04,755 INFO    [1010] fire 2,495,000 → success=True data={}
+2026-09-25 19:48:05,420 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:05,425 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:05,426 INFO    [1005] price 1,930,000 (state=Bid now, my_last=1,930,000, bids=9)
+2026-09-25 19:48:05,432 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:05,433 INFO    [1005] fire 1,935,000 → success=True data={}
+2026-09-25 19:48:08,135 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,137 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,137 INFO    [1010] price 2,530,000 (state=Bid now, my_last=2,495,000, bids=10)
+2026-09-25 19:48:08,138 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,139 INFO    [1010] fire 2,535,000 → success=True data={}
+2026-09-25 19:48:08,970 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,975 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,976 INFO    [1005] price 1,935,000 (state=Bid now, my_last=1,935,000, bids=10)
+2026-09-25 19:48:08,982 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:08,983 INFO    [1005] fire 1,940,000 → success=True data={}
+2026-09-25 19:48:12,605 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:12,607 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:12,607 INFO    [1010] price 2,535,000 (state=Bid now, my_last=2,535,000, bids=11)
+2026-09-25 19:48:12,609 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:12,610 INFO    [1010] fire 2,540,000 → success=True data={}
+2026-09-25 19:48:13,153 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:13,159 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:13,161 INFO    [1005] price 1,940,000 (state=Bid now, my_last=1,940,000, bids=11)
+2026-09-25 19:48:13,166 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:13,167 INFO    [1005] fire 1,945,000 → success=True data={}
+2026-09-25 19:48:16,721 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:16,726 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:16,728 INFO    [1010] price 2,540,000 (state=Bid now, my_last=2,540,000, bids=12)
+2026-09-25 19:48:16,734 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:16,736 INFO    [1010] fire 2,545,000 → success=True data={}
+2026-09-25 19:48:17,769 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:17,774 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:17,776 INFO    [1005] price 1,945,000 (state=Bid now, my_last=1,945,000, bids=12)
+2026-09-25 19:48:17,781 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:17,783 INFO    [1005] fire 1,950,000 → success=True data={}
+2026-09-25 19:48:21,140 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,145 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,146 INFO    [1010] price 2,545,000 (state=Bid now, my_last=2,545,000, bids=13)
+2026-09-25 19:48:21,150 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,152 INFO    [1010] fire 2,550,000 → success=True data={}
+2026-09-25 19:48:21,907 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,912 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,913 INFO    [1005] price 1,950,000 (state=Bid now, my_last=1,950,000, bids=13)
+2026-09-25 19:48:21,920 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:21,921 INFO    [1005] fire 1,955,000 → success=True data={}
+2026-09-25 19:48:25,658 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:25,664 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:25,665 INFO    [1010] price 2,550,000 (state=Bid now, my_last=2,550,000, bids=14)
+2026-09-25 19:48:25,672 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:25,674 INFO    [1010] fire 2,555,000 → success=True data={}
+2026-09-25 19:48:26,486 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:26,494 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:26,496 INFO    [1005] price 1,955,000 (state=Bid now, my_last=1,955,000, bids=14)
+2026-09-25 19:48:26,504 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:26,506 INFO    [1005] fire 1,960,000 → success=True data={}
+2026-09-25 19:48:29,678 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,685 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,687 INFO    [1010] price 2,555,000 (state=Bid now, my_last=2,555,000, bids=15)
+2026-09-25 19:48:29,693 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,694 INFO    [1010] fire 2,560,000 → success=True data={}
+2026-09-25 19:48:29,792 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,798 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,800 INFO    [1005] price 1,960,000 (state=Bid now, my_last=1,960,000, bids=15)
+2026-09-25 19:48:29,805 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:29,807 INFO    [1005] fire 1,965,000 → success=True data={}
+2026-09-25 19:48:31,906 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,911 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,912 INFO    [1005] price 1,965,000 (state=Bid now, my_last=1,965,000, bids=16)
+2026-09-25 19:48:31,919 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,920 INFO    [1005] fire 1,970,000 → success=True data={}
+2026-09-25 19:48:31,964 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,970 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,971 INFO    [1010] price 2,560,000 (state=Bid now, my_last=2,560,000, bids=16)
+2026-09-25 19:48:31,976 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:31,977 INFO    [1010] fire 2,565,000 → success=True data={}
+2026-09-25 19:48:33,558 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:33,565 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:33,567 INFO    [1005] price 1,970,000 (state=Bid now, my_last=1,970,000, bids=17)
+2026-09-25 19:48:33,574 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:33,576 INFO    [1005] fire 1,975,000 → success=True data={}
+2026-09-25 19:48:34,335 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:34,341 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:34,343 INFO    [1010] price 2,565,000 (state=Bid now, my_last=2,565,000, bids=17)
+2026-09-25 19:48:34,352 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:34,353 INFO    [1010] fire 2,570,000 → success=True data={}
+2026-09-25 19:48:35,644 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:35,652 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:35,653 INFO    [1005] price 1,975,000 (state=Bid now, my_last=1,975,000, bids=18)
+2026-09-25 19:48:35,660 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:35,661 INFO    [1005] fire 1,980,000 → success=True data={}
+2026-09-25 19:48:36,285 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:36,291 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:36,292 INFO    [1010] price 2,570,000 (state=Bid now, my_last=2,570,000, bids=18)
+2026-09-25 19:48:36,298 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:36,300 INFO    [1010] fire 2,575,000 → success=True data={}
+2026-09-25 19:48:37,318 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:37,324 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:37,325 INFO    [1005] price 1,980,000 (state=Bid now, my_last=1,980,000, bids=19)
+2026-09-25 19:48:37,332 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:37,334 INFO    [1005] fire 1,985,000 → success=True data={}
+2026-09-25 19:48:38,619 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:38,622 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:38,622 INFO    [1010] price 2,575,000 (state=Bid now, my_last=2,575,000, bids=19)
+2026-09-25 19:48:38,625 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:38,625 INFO    [1010] fire 2,580,000 → success=True data={}
+2026-09-25 19:48:39,622 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:39,628 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:39,629 INFO    [1005] price 1,985,000 (state=Bid now, my_last=1,985,000, bids=20)
+2026-09-25 19:48:39,640 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:39,641 INFO    [1005] fire 1,990,000 → success=True data={}
+2026-09-25 19:48:40,572 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:40,583 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:40,584 INFO    [1010] price 2,580,000 (state=Bid now, my_last=2,580,000, bids=20)
+2026-09-25 19:48:40,589 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:40,591 INFO    [1010] fire 2,585,000 → success=True data={}
+2026-09-25 19:48:41,424 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:41,430 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:41,432 INFO    [1005] price 1,990,000 (state=Bid now, my_last=1,990,000, bids=21)
+2026-09-25 19:48:41,438 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:41,439 INFO    [1005] fire 1,995,000 → success=True data={}
+2026-09-25 19:48:42,587 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:42,593 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:42,594 INFO    [1010] price 2,585,000 (state=Bid now, my_last=2,585,000, bids=21)
+2026-09-25 19:48:42,605 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:42,607 INFO    [1010] fire 2,590,000 → success=True data={}
+2026-09-25 19:48:43,566 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:43,573 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:43,574 INFO    [1005] price 1,995,000 (state=Bid now, my_last=1,995,000, bids=22)
+2026-09-25 19:48:43,579 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:43,579 INFO    [1005] fire 2,000,000 → success=True data={}
+2026-09-25 19:48:44,918 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:44,920 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:44,920 INFO    [1010] price 2,590,000 (state=Bid now, my_last=2,590,000, bids=22)
+2026-09-25 19:48:44,922 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:44,923 INFO    [1010] fire 2,595,000 → success=True data={}
+2026-09-25 19:48:45,964 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:45,971 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:45,973 INFO    [1005] price 2,000,000 (state=Bid now, my_last=2,000,000, bids=23)
+2026-09-25 19:48:45,980 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:45,982 INFO    [1005] fire 2,005,000 → success=True data={}
+2026-09-25 19:48:46,955 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:46,960 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:46,961 INFO    [1010] price 2,595,000 (state=Bid now, my_last=2,595,000, bids=23)
+2026-09-25 19:48:46,967 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:46,969 INFO    [1010] fire 2,600,000 → success=True data={}
+2026-09-25 19:48:47,936 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:47,942 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:47,943 INFO    [1005] price 2,005,000 (state=Bid now, my_last=2,005,000, bids=24)
+2026-09-25 19:48:47,952 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:47,954 INFO    [1005] fire 2,010,000 → success=True data={}
+2026-09-25 19:48:48,590 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:48,595 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:48,597 INFO    [1010] price 2,600,000 (state=Bid now, my_last=2,600,000, bids=24)
+2026-09-25 19:48:48,603 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:48,604 INFO    [1010] fire 2,605,000 → success=True data={}
+2026-09-25 19:48:50,128 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,133 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,134 INFO    [1005] price 2,010,000 (state=Bid now, my_last=2,010,000, bids=25)
+2026-09-25 19:48:50,137 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,138 INFO    [1005] fire 2,015,000 → success=True data={}
+2026-09-25 19:48:50,209 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,211 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,212 INFO    [1010] price 2,605,000 (state=Bid now, my_last=2,605,000, bids=25)
+2026-09-25 19:48:50,215 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:50,216 INFO    [1010] fire 2,610,000 → success=True data={}
+2026-09-25 19:48:52,401 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,406 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,408 INFO    [1005] price 2,015,000 (state=Bid now, my_last=2,015,000, bids=26)
+2026-09-25 19:48:52,413 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,414 INFO    [1005] fire 2,020,000 → success=True data={}
+2026-09-25 19:48:52,424 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,430 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,432 INFO    [1010] price 2,610,000 (state=Bid now, my_last=2,610,000, bids=26)
+2026-09-25 19:48:52,439 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:52,440 INFO    [1010] fire 2,615,000 → success=True data={}
+2026-09-25 19:48:54,284 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,289 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,290 INFO    [1005] price 2,020,000 (state=Bid now, my_last=2,020,000, bids=27)
+2026-09-25 19:48:54,296 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,298 INFO    [1005] fire 2,025,000 → success=True data={}
+2026-09-25 19:48:54,598 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,603 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,605 INFO    [1010] price 2,615,000 (state=Bid now, my_last=2,615,000, bids=27)
+2026-09-25 19:48:54,610 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:54,612 INFO    [1010] fire 2,620,000 → success=True data={}
+2026-09-25 19:48:55,999 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,007 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,009 INFO    [1005] price 2,025,000 (state=Bid now, my_last=2,025,000, bids=28)
+2026-09-25 19:48:56,015 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,017 INFO    [1005] fire 2,030,000 → success=True data={}
+2026-09-25 19:48:56,511 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,518 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,519 INFO    [1010] price 2,620,000 (state=Bid now, my_last=2,620,000, bids=28)
+2026-09-25 19:48:56,524 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:56,525 INFO    [1010] fire 2,625,000 → success=True data={}
+2026-09-25 19:48:58,279 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,286 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,288 INFO    [1010] price 2,625,000 (state=Bid now, my_last=2,625,000, bids=29)
+2026-09-25 19:48:58,294 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,295 INFO    [1010] fire 2,630,000 → success=True data={}
+2026-09-25 19:48:58,336 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,341 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,342 INFO    [1005] price 2,030,000 (state=Bid now, my_last=2,030,000, bids=29)
+2026-09-25 19:48:58,350 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:58,351 INFO    [1005] fire 2,035,000 → success=True data={}
+2026-09-25 19:48:59,941 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:59,948 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:48:59,950 INFO    [1010] price 2,630,000 (state=Bid now, my_last=2,630,000, bids=30)
+2026-09-25 19:48:59,955 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:48:59,957 INFO    [1010] fire 2,635,000 → success=True data={}
+2026-09-25 19:49:00,487 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,493 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,494 INFO    [1005] price 2,035,000 (state=Bid now, my_last=2,035,000, bids=30)
+2026-09-25 19:49:00,537 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,538 INFO    [1005] fire 2,040,000 → success=True data={}
+2026-09-25 19:49:00,857 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,860 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,861 INFO    [1010] price 2,635,000 (state=Bid now, my_last=2,635,000, bids=31)
+2026-09-25 19:49:00,865 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:00,865 INFO    [1010] fire 2,640,000 → success=True data={}
+2026-09-25 19:49:01,549 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,554 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,555 INFO    [1005] price 2,040,000 (state=Bid now, my_last=2,040,000, bids=31)
+2026-09-25 19:49:01,561 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,563 INFO    [1005] fire 2,045,000 → success=True data={}
+2026-09-25 19:49:01,760 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,770 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,774 INFO    [1010] price 2,640,000 (state=Bid now, my_last=2,640,000, bids=32)
+2026-09-25 19:49:01,778 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:01,779 INFO    [1010] fire 2,645,000 → success=True data={}
+2026-09-25 19:49:02,690 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,695 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,698 INFO    [1010] price 2,645,000 (state=Bid now, my_last=2,645,000, bids=33)
+2026-09-25 19:49:02,703 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,704 INFO    [1010] fire 2,650,000 → success=True data={}
+2026-09-25 19:49:02,765 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,771 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,772 INFO    [1005] price 2,045,000 (state=Bid now, my_last=2,045,000, bids=32)
+2026-09-25 19:49:02,778 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:02,779 INFO    [1005] fire 2,050,000 → success=True data={}
+2026-09-25 19:49:03,681 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,687 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,688 INFO    [1010] price 2,650,000 (state=Bid now, my_last=2,650,000, bids=34)
+2026-09-25 19:49:03,694 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,695 INFO    [1010] fire 2,655,000 → success=True data={}
+2026-09-25 19:49:03,891 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,900 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,902 INFO    [1005] price 2,050,000 (state=Bid now, my_last=2,050,000, bids=33)
+2026-09-25 19:49:03,910 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:03,912 INFO    [1005] fire 2,055,000 → success=True data={}
+2026-09-25 19:49:04,649 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,655 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,656 INFO    [1010] price 2,655,000 (state=Bid now, my_last=2,655,000, bids=35)
+2026-09-25 19:49:04,662 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,664 INFO    [1010] fire 2,660,000 → success=True data={}
+2026-09-25 19:49:04,963 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,970 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,971 INFO    [1005] price 2,055,000 (state=Bid now, my_last=2,055,000, bids=34)
+2026-09-25 19:49:04,977 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:04,980 INFO    [1005] fire 2,060,000 → success=True data={}
+2026-09-25 19:49:05,748 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,754 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,754 INFO    [1010] price 2,660,000 (state=Bid now, my_last=2,660,000, bids=36)
+2026-09-25 19:49:05,760 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,761 INFO    [1010] fire 2,665,000 → success=True data={}
+2026-09-25 19:49:05,931 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,933 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,933 INFO    [1005] price 2,060,000 (state=Bid now, my_last=2,060,000, bids=35)
+2026-09-25 19:49:05,935 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:05,935 INFO    [1005] fire 2,065,000 → success=True data={}
+2026-09-25 19:49:06,958 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:06,966 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:06,966 INFO    [1010] price 2,665,000 (state=Bid now, my_last=2,665,000, bids=37)
+2026-09-25 19:49:06,970 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:06,971 INFO    [1010] fire 2,670,000 → success=True data={}
+2026-09-25 19:49:07,067 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,070 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,071 INFO    [1005] price 2,065,000 (state=Bid now, my_last=2,065,000, bids=36)
+2026-09-25 19:49:07,073 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,073 INFO    [1005] fire 2,070,000 → success=True data={}
+2026-09-25 19:49:07,857 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,863 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,864 INFO    [1010] price 2,670,000 (state=Bid now, my_last=2,670,000, bids=38)
+2026-09-25 19:49:07,870 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:07,871 INFO    [1010] fire 2,675,000 → success=True data={}
+2026-09-25 19:49:08,083 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,088 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,090 INFO    [1005] price 2,070,000 (state=Bid now, my_last=2,070,000, bids=37)
+2026-09-25 19:49:08,093 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,094 INFO    [1005] fire 2,075,000 → success=True data={}
+2026-09-25 19:49:08,898 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,901 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,903 INFO    [1010] price 2,675,000 (state=Bid now, my_last=2,675,000, bids=39)
+2026-09-25 19:49:08,906 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:08,906 INFO    [1010] fire 2,680,000 → success=True data={}
+2026-09-25 19:49:09,200 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,205 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,207 INFO    [1005] price 2,075,000 (state=Bid now, my_last=2,075,000, bids=38)
+2026-09-25 19:49:09,213 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,215 INFO    [1005] fire 2,080,000 → success=True data={}
+2026-09-25 19:49:09,720 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,727 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,728 INFO    [1010] price 2,680,000 (state=Bid now, my_last=2,680,000, bids=40)
+2026-09-25 19:49:09,736 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:09,737 INFO    [1010] fire 2,685,000 → success=True data={}
+2026-09-25 19:49:10,322 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,324 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,324 INFO    [1005] price 2,080,000 (state=Bid now, my_last=2,080,000, bids=39)
+2026-09-25 19:49:10,326 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,326 INFO    [1005] fire 2,085,000 → success=True data={}
+2026-09-25 19:49:10,668 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,673 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,674 INFO    [1010] price 2,685,000 (state=Bid now, my_last=2,685,000, bids=41)
+2026-09-25 19:49:10,679 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:10,680 INFO    [1010] fire 2,690,000 → success=True data={}
+2026-09-25 19:49:11,272 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,274 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,275 INFO    [1005] price 2,085,000 (state=Bid now, my_last=2,085,000, bids=40)
+2026-09-25 19:49:11,276 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,277 INFO    [1005] fire 2,090,000 → success=True data={}
+2026-09-25 19:49:11,771 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,778 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,779 INFO    [1010] price 2,690,000 (state=Bid now, my_last=2,690,000, bids=42)
+2026-09-25 19:49:11,786 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:11,787 INFO    [1010] fire 2,695,000 → success=True data={}
+2026-09-25 19:49:12,169 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:12,176 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:12,176 INFO    [1005] price 2,090,000 (state=Bid now, my_last=2,090,000, bids=41)
+2026-09-25 19:49:12,181 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:12,182 INFO    [1005] fire 2,095,000 → success=True data={}
+2026-09-25 19:49:12,989 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:12,994 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:12,996 INFO    [1010] price 2,695,000 (state=Bid now, my_last=2,695,000, bids=43)
+2026-09-25 19:49:13,002 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:13,003 INFO    [1010] fire 2,700,000 → success=True data={}
+2026-09-25 19:49:13,223 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:13,229 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:13,230 INFO    [1005] price 2,095,000 (state=Bid now, my_last=2,095,000, bids=42)
+2026-09-25 19:49:13,238 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:13,239 INFO    [1005] fire 2,100,000 → success=True data={}
+2026-09-25 19:49:14,128 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,132 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,133 INFO    [1010] price 2,700,000 (state=Bid now, my_last=2,700,000, bids=44)
+2026-09-25 19:49:14,134 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,135 INFO    [1010] fire 2,705,000 → success=True data={}
+2026-09-25 19:49:14,220 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,222 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,222 INFO    [1005] price 2,100,000 (state=Bid now, my_last=2,100,000, bids=43)
+2026-09-25 19:49:14,224 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,224 INFO    [1005] fire 2,105,000 → success=True data={}
+2026-09-25 19:49:14,993 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:14,999 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:15,001 INFO    [1010] price 2,705,000 (state=Bid now, my_last=2,705,000, bids=45)
+2026-09-25 19:49:15,006 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:15,008 INFO    [1010] fire 2,710,000 → success=True data={}
+2026-09-25 19:49:15,387 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:15,393 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:15,394 INFO    [1005] price 2,105,000 (state=Bid now, my_last=2,105,000, bids=44)
+2026-09-25 19:49:15,402 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:15,403 INFO    [1005] fire 2,110,000 → success=True data={}
+2026-09-25 19:49:16,015 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,018 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,019 INFO    [1010] price 2,710,000 (state=Bid now, my_last=2,710,000, bids=46)
+2026-09-25 19:49:16,023 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,023 INFO    [1010] fire 2,715,000 → success=True data={}
+2026-09-25 19:49:16,318 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,320 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,321 INFO    [1005] price 2,110,000 (state=Bid now, my_last=2,110,000, bids=45)
+2026-09-25 19:49:16,323 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,323 INFO    [1005] fire 2,115,000 → success=True data={}
+2026-09-25 19:49:16,892 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,896 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,896 INFO    [1010] price 2,715,000 (state=Bid now, my_last=2,715,000, bids=47)
+2026-09-25 19:49:16,899 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:16,899 INFO    [1010] fire 2,720,000 → success=True data={}
+2026-09-25 19:49:17,369 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,372 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,372 INFO    [1005] price 2,115,000 (state=Bid now, my_last=2,115,000, bids=46)
+2026-09-25 19:49:17,375 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,376 INFO    [1005] fire 2,120,000 → success=True data={}
+2026-09-25 19:49:17,758 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,760 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,761 INFO    [1010] price 2,720,000 (state=Bid now, my_last=2,720,000, bids=48)
+2026-09-25 19:49:17,763 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:17,763 INFO    [1010] fire 2,725,000 → success=True data={}
+2026-09-25 19:49:18,498 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,503 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,504 INFO    [1005] price 2,120,000 (state=Bid now, my_last=2,120,000, bids=47)
+2026-09-25 19:49:18,510 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,512 INFO    [1005] fire 2,125,000 → success=True data={}
+2026-09-25 19:49:18,609 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,616 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,617 INFO    [1010] price 2,725,000 (state=Bid now, my_last=2,725,000, bids=49)
+2026-09-25 19:49:18,623 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:18,624 INFO    [1010] fire 2,730,000 → success=True data={}
+2026-09-25 19:49:19,402 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,408 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,409 INFO    [1005] price 2,125,000 (state=Bid now, my_last=2,125,000, bids=48)
+2026-09-25 19:49:19,416 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,417 INFO    [1005] fire 2,130,000 → success=True data={}
+2026-09-25 19:49:19,484 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,489 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,491 INFO    [1010] price 2,730,000 (state=Bid now, my_last=2,730,000, bids=50)
+2026-09-25 19:49:19,496 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:19,498 INFO    [1010] fire 2,735,000 → success=True data={}
+2026-09-25 19:49:20,511 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,516 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,518 INFO    [1005] price 2,130,000 (state=Bid now, my_last=2,130,000, bids=49)
+2026-09-25 19:49:20,523 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,524 INFO    [1005] fire 2,135,000 → success=True data={}
+2026-09-25 19:49:20,613 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,616 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,616 INFO    [1010] price 2,735,000 (state=Bid now, my_last=2,735,000, bids=51)
+2026-09-25 19:49:20,619 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:20,619 INFO    [1010] fire 2,740,000 → success=True data={}
+2026-09-25 19:49:21,590 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,600 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,601 INFO    [1005] price 2,135,000 (state=Bid now, my_last=2,135,000, bids=50)
+2026-09-25 19:49:21,606 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,608 INFO    [1005] fire 2,140,000 → success=True data={}
+2026-09-25 19:49:21,654 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,659 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,660 INFO    [1010] price 2,740,000 (state=Bid now, my_last=2,740,000, bids=52)
+2026-09-25 19:49:21,663 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:21,664 INFO    [1010] fire 2,745,000 → success=True data={}
+2026-09-25 19:49:22,554 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,555 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,556 INFO    [1010] price 2,745,000 (state=Bid now, my_last=2,745,000, bids=53)
+2026-09-25 19:49:22,558 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,558 INFO    [1010] fire 2,750,000 → success=True data={}
+2026-09-25 19:49:22,582 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,584 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,584 INFO    [1005] price 2,140,000 (state=Bid now, my_last=2,140,000, bids=51)
+2026-09-25 19:49:22,586 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:22,586 INFO    [1005] fire 2,145,000 → success=True data={}
+2026-09-25 19:49:23,481 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,484 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,484 INFO    [1010] price 2,750,000 (state=Bid now, my_last=2,750,000, bids=54)
+2026-09-25 19:49:23,488 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,488 INFO    [1010] fire 2,755,000 → success=True data={}
+2026-09-25 19:49:23,771 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,777 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,779 INFO    [1005] price 2,145,000 (state=Bid now, my_last=2,145,000, bids=52)
+2026-09-25 19:49:23,784 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:23,785 INFO    [1005] fire 2,150,000 → success=True data={}
+2026-09-25 19:49:24,622 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,628 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,629 INFO    [1010] price 2,755,000 (state=Bid now, my_last=2,755,000, bids=55)
+2026-09-25 19:49:24,635 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,636 INFO    [1010] fire 2,760,000 → success=True data={}
+2026-09-25 19:49:24,807 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,810 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,810 INFO    [1005] price 2,150,000 (state=Bid now, my_last=2,150,000, bids=53)
+2026-09-25 19:49:24,812 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:24,812 INFO    [1005] fire 2,155,000 → success=True data={}
+2026-09-25 19:49:25,783 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,787 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,788 INFO    [1010] price 2,760,000 (state=Bid now, my_last=2,760,000, bids=56)
+2026-09-25 19:49:25,791 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,792 INFO    [1010] fire 2,765,000 → success=True data={}
+2026-09-25 19:49:25,961 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,967 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,968 INFO    [1005] price 2,155,000 (state=Bid now, my_last=2,155,000, bids=54)
+2026-09-25 19:49:25,974 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:25,975 INFO    [1005] fire 2,160,000 → success=True data={}
+2026-09-25 19:49:26,844 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:26,849 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:26,851 INFO    [1010] price 2,765,000 (state=Bid now, my_last=2,765,000, bids=57)
+2026-09-25 19:49:26,856 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:26,857 INFO    [1010] fire 2,770,000 → success=True data={}
+2026-09-25 19:49:27,148 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,155 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,156 INFO    [1005] price 2,160,000 (state=Bid now, my_last=2,160,000, bids=55)
+2026-09-25 19:49:27,165 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,166 INFO    [1005] fire 2,165,000 → success=True data={}
+2026-09-25 19:49:27,768 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,773 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1010 "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,775 INFO    [1010] price 2,770,000 (state=Bid now, my_last=2,770,000, bids=58)
+2026-09-25 19:49:27,782 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax "HTTP/1.1 200 OK"
+2026-09-25 19:49:27,783 INFO    [1010] fire 2,775,000 → success=True data={}
+2026-09-25 19:49:28,289 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:28,295 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1005 "HTTP/1.1 200 OK"
+2026-09-25 19:49:28,296 INFO    [1005] auction closed (state=View)
+2026-09-25 19:49:28,297 INFO    [1005] endgame done: bids=56 last_bid=2,165,000
+2026-09-25 19:49:28,889 INFO    [1010] endgame done: bids=59 last_bid=2,775,000
+2026-09-25 19:49:28,890 INFO    done

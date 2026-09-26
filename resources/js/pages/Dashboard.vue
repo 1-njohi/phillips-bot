@@ -7,7 +7,6 @@ import {
     ref,
 } from "vue";
 import { Head, Link } from "@inertiajs/vue3";
-import AppLayout from "@/layouts/AppLayout.vue";
 import BudgetAlertToasts from "@/components/BudgetAlertToasts.vue";
 import { useAuctionState } from "@/composables/useAuctionState";
 import { useBudgetAlerts } from "@/composables/useBudgetAlerts";

@@ -1,0 +1,11 @@
+2026-09-25 18:03:23,383 INFO    log file: logs/snipe-56438-20260925-180323.log
+2026-09-25 18:03:23,384 INFO    target: product=56438  slug=kdk-156x-mercedes-benz-actros  max=1,500,000
+2026-09-25 18:03:23,454 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 18:03:23,456 INFO    clock offset: -0.452s  (rtt=6ms, samples=1)
+2026-09-25 18:03:23,459 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 18:03:23,460 INFO    clock offset: -0.452s  (rtt=4ms, samples=2)
+2026-09-25 18:03:23,461 INFO    [56438] starting  max=1,500,000
+2026-09-25 18:03:23,463 INFO    HTTP Request: GET http://localhost:9000/product/kdk-156x-mercedes-benz-actros/ "HTTP/1.1 404 Not Found"
+2026-09-25 18:03:23,464 ERROR   product page status 404 (kdk-156x-mercedes-benz-actros)
+2026-09-25 18:03:23,464 ERROR   [56438] could not determine finish time
+2026-09-25 18:03:23,465 INFO    done

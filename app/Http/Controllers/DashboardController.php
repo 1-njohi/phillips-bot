@@ -20,8 +20,7 @@ class DashboardController extends Controller
 
     public function state(): JsonResponse
     {
-        $vehicles = Vehicle::whereNotNull('finish_time')
-            ->orderBy('finish_time')
+        $vehicles = Vehicle::query()
             ->get()
             ->map(fn(Vehicle $v) => [
                 'id' => $v->id,
@@ -115,8 +114,8 @@ class DashboardController extends Controller
         $events = [];
 
         // Jumps + threshold crossings from the last 20 minutes.
-        $rows = PriceHistory::with('vehicle:id,name,wp_product_id,increment')
-            ->where('recorded_at', '>=', now()->subMinutes(20))
+        $rows = PriceHistory::with('vehicle:id,name,wp_product_id')
+            ->where('recorded_at', '>=', now()->subMinutes(120))
             ->orderBy('recorded_at')
             ->get();
 
@@ -129,7 +128,7 @@ class DashboardController extends Controller
 
                 if ($prev !== null) {
                     $delta = $row->price - $prev->price;
-                    $increment = max(1, (int) ($vehicle->increment ?? 5000));
+                    $increment = (int) config('auction.increment');
 
                     if ($delta >= $increment * 5) {
                         $events[] = [

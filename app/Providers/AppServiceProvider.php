@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
 
-use App\Services\SimulatedAuctionApi;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -16,9 +15,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(SimulatedAuctionApi::class, function () {
-            return new SimulatedAuctionApi(config('simulation'));
-        });
     }
 
     /**

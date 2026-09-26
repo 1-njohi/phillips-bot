@@ -61,6 +61,37 @@ class AuctionClient
     }
 
     /**
+     * GET /product/{slug}/
+     * Parse data-finish-time from the product page HTML.
+     * Returns a Unix timestamp, or null on failure.
+     */
+    public function finishTimeForSlug(string $slug): ?int
+    {
+        // Not using $this->client() because that sets acceptJson().
+        // Product pages are HTML, not JSON.
+        $res = Http::baseUrl($this->baseUrl)
+            ->timeout(10)
+            ->retry(2, 500, throw: false)
+            ->get("/product/{$slug}/");
+
+        AuctionClock::observe($res->header('Date'));
+
+        if (!$res->successful()) {
+            Log::warning("finishTimeForSlug: {$slug} returned {$res->status()}");
+            Log::info($this->baseUrl);
+            Log::info($res);
+            return null;
+        }
+
+        if (preg_match('/data-finish-time="(\d+)"/', $res->body(), $m)) {
+            return (int) $m[1];
+        }
+
+        Log::warning("finishTimeForSlug: no data-finish-time for {$slug}");
+        return null;
+    }
+
+    /**
      * GET /wp-json/wc/store/v1/products/{id}
      *
      * @return array{

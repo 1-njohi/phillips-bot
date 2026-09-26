@@ -1,0 +1,64 @@
+2026-09-25 22:34:39,726 INFO    log file: logs/snipe-1001-20260925-223439.log
+2026-09-25 22:34:39,726 INFO    target: product=1001  vehicle_id=1  armed_bid_id=1  max=5,000,000
+2026-09-25 22:34:39,802 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:39,804 INFO    clock offset: -0.799s  (rtt=8ms, samples=1)
+2026-09-25 22:34:39,806 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:39,807 INFO    clock offset: -0.799s  (rtt=2ms, samples=2)
+2026-09-25 22:34:39,807 INFO    [1001] starting  max=5,000,000
+2026-09-25 22:34:39,810 INFO    HTTP Request: GET http://localhost:9000/product/toyota-hilux-2019/ "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,813 INFO    [1001] finish_time=1790364982  remaining=103s
+2026-09-25 22:34:39,816 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,816 INFO    [1001] initial state=Bid now
+2026-09-25 22:34:39,819 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,820 INFO    [1001] initial price=1,260,000
+2026-09-25 22:34:39,847 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:39,849 INFO    clock offset: -0.806s  (rtt=7ms, samples=3)
+2026-09-25 22:34:39,850 INFO    [1001] === endgame begins ===
+2026-09-25 22:34:39,854 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,857 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,857 INFO    [1001] price 1,260,000 (my_last=—, bids=0, rem=103.0s)
+2026-09-25 22:34:39,859 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:39,877 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:34:39,877 INFO    [1001] summary: mode=contest tail=300ms rem=103.0s reads=2 p50=5ms p95=5ms writes=1 p50=2ms p95=2ms prop=0 p50=0ms p95=0ms bids=1 last=— current=1,260,000
+2026-09-25 22:34:39,932 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,937 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:39,940 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:39,948 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:34:40,000 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:40,002 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:40,004 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:40,008 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:34:40,066 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:40,070 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:34:40,073 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:34:40,077 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:34:40,126 INFO    interrupted by user
+2026-09-25 22:34:40,129 ERROR   [1001] worker crashed: Cannot send a request, as the client has been closed.
+Traceback (most recent call last):
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 747, in vehicle_worker
+    run_endgame(client, cfg, vehicle, finish_ts, log, db=db)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 547, in run_endgame
+    current = client.read_price_timed(vehicle.product_id, lat)
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 410, in read_price_timed
+    data = self.read_store_timed(product_id, lat)
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 387, in read_store_timed
+    r = self.http.get(f"/wp-json/wc/store/v1/products/{product_id}")
+  File "/home/wanjohi/Code/Web/phillips-bot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/wanjohi/Code/Web/phillips-bot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wanjohi/Code/Web/phillips-bot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 901, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+2026-09-25 22:34:40,130 INFO    done
+2026-09-25 22:34:40,133 WARNING set_armed_status failed: Cannot operate on a closed database.

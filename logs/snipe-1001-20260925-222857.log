@@ -1,0 +1,826 @@
+2026-09-25 22:28:57,010 INFO    log file: logs/snipe-1001-20260925-222857.log
+2026-09-25 22:28:57,010 INFO    target: product=1001  vehicle_id=1  armed_bid_id=1  max=5,000,000
+2026-09-25 22:28:57,133 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,136 INFO    clock offset: -0.130s  (rtt=8ms, samples=1)
+2026-09-25 22:28:57,139 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,140 INFO    clock offset: -0.130s  (rtt=4ms, samples=2)
+2026-09-25 22:28:57,141 INFO    [1001] starting  max=5,000,000
+2026-09-25 22:28:57,142 INFO    HTTP Request: GET http://localhost:9000/product/toyota-hilux-2019/ "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,145 INFO    [1001] finish_time=1790364943  remaining=406s
+2026-09-25 22:28:57,147 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,147 INFO    [1001] initial state=Bid now
+2026-09-25 22:28:57,149 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,149 INFO    [1001] initial price=1,250,000
+2026-09-25 22:28:57,159 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,162 INFO    clock offset: -0.139s  (rtt=5ms, samples=3)
+2026-09-25 22:28:57,163 INFO    [1001] === endgame begins ===
+2026-09-25 22:28:57,164 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,166 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,167 INFO    [1001] price 1,250,000 (my_last=—, bids=0, rem=406.0s)
+2026-09-25 22:28:57,168 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,209 INFO    [1001] fire 1,255,000 (contest) → success=False (0.002s)
+2026-09-25 22:28:57,210 INFO    [1001] summary: mode=contest tail=300ms rem=406.0s reads=2 p50=2ms p95=2ms writes=1 p50=2ms p95=2ms prop=0 p50=0ms p95=0ms bids=1 last=— current=1,250,000
+2026-09-25 22:28:57,263 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,267 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,271 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,275 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,329 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,333 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,336 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,341 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,396 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,400 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,404 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,408 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,462 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,466 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,469 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,474 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,528 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,532 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,536 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,541 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:57,595 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,599 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,603 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,607 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,661 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,665 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,669 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,673 INFO    [1001] fire 1,255,000 (contest) → success=False (0.003s)
+2026-09-25 22:28:57,727 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,731 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,736 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,740 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:57,794 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,798 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,802 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,805 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,858 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,862 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,867 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,869 INFO    [1001] fire 1,255,000 (contest) → success=False (0.004s)
+2026-09-25 22:28:57,924 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,928 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,933 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:57,937 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:57,991 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:57,996 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,002 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,005 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,060 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,065 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,071 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,074 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:28:58,132 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,136 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,141 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,145 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,199 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,204 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,209 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,213 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,267 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,272 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,277 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,280 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,335 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,339 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,344 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,347 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,401 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,408 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,413 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,417 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:28:58,470 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,475 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,482 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,486 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:28:58,540 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,547 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,553 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,556 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:28:58,612 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,617 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,622 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,625 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,682 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,686 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,691 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,695 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,750 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,755 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,759 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,762 INFO    [1001] fire 1,255,000 (contest) → success=False (0.005s)
+2026-09-25 22:28:58,818 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,825 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,833 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,838 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:28:58,893 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,902 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,908 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,914 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:28:58,971 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,977 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:58,987 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:58,992 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:28:59,050 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,056 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,064 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,070 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:28:59,125 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,134 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,140 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,145 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:28:59,201 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,206 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,214 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,220 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:28:59,275 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,284 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,290 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,296 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:28:59,355 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,362 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,370 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,376 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:28:59,434 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,439 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,451 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,457 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:28:59,514 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,520 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,528 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,534 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:28:59,589 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,595 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,602 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,607 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:28:59,666 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,678 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,688 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,695 INFO    [1001] fire 1,255,000 (contest) → success=False (0.010s)
+2026-09-25 22:28:59,748 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,750 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,754 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,758 INFO    [1001] fire 1,255,000 (contest) → success=False (0.003s)
+2026-09-25 22:28:59,811 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,813 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,816 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,821 INFO    [1001] fire 1,255,000 (contest) → success=False (0.003s)
+2026-09-25 22:28:59,873 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,875 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,878 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,882 INFO    [1001] fire 1,255,000 (contest) → success=False (0.003s)
+2026-09-25 22:28:59,935 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,937 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,939 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:28:59,943 INFO    [1001] fire 1,255,000 (contest) → success=False (0.003s)
+2026-09-25 22:28:59,995 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,997 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:28:59,998 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,001 INFO    [1001] fire 1,255,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:00,053 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,055 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,057 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,059 INFO    [1001] fire 1,255,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:00,114 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,120 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,126 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,130 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:00,188 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,193 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,202 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,206 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:00,261 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,268 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,278 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,283 INFO    [1001] fire 1,255,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:00,338 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,345 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,351 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,354 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:00,410 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,418 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,425 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,429 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:00,487 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,493 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,500 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,504 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:00,560 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,568 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,574 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,578 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:00,634 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,640 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,649 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,655 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:00,714 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,721 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,728 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,734 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:00,789 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,796 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,803 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,807 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:00,865 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,871 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,879 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,883 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:00,938 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,947 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:00,955 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:00,959 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,016 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,021 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,028 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,032 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,087 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,093 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,100 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,104 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:01,159 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,167 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,174 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,178 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,234 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,240 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,248 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,252 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:01,309 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,318 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,325 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,329 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:01,385 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,390 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,398 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,401 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,457 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,466 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,473 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,477 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,533 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,539 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,546 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,553 INFO    [1001] fire 1,255,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:01,609 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,620 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,629 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,634 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:01,689 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,698 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,703 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,707 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:01,765 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,771 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,779 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,783 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:01,838 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,844 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,851 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,854 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:01,910 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,918 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,924 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:01,928 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:01,984 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,990 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:01,999 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,005 INFO    [1001] fire 1,255,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:02,061 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,068 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,076 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,083 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:02,138 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,144 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,150 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,156 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:02,215 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,220 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,228 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,236 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:02,237 INFO    [1001] summary: mode=contest tail=300ms rem=400.9s reads=50 p50=6ms p95=10ms writes=50 p50=7ms p95=10ms prop=0 p50=0ms p95=0ms bids=71 last=— current=1,250,000
+2026-09-25 22:29:02,292 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,300 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,307 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,313 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,370 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,376 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,383 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,389 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,447 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,452 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,460 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,468 INFO    [1001] fire 1,255,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:02,523 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,532 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,539 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,544 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,601 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,607 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,615 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,618 INFO    [1001] fire 1,255,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:02,673 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,682 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,691 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,696 INFO    [1001] fire 1,255,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:02,751 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,757 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,765 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,768 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,823 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,832 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,839 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,843 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,900 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,906 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,913 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,917 INFO    [1001] fire 1,255,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:02,973 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,982 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:02,989 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:02,992 INFO    [1001] fire 1,255,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:03,050 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,056 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,057 INFO    [1001] price 1,260,000 (my_last=—, bids=81, rem=400.1s)
+2026-09-25 22:29:03,064 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,068 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:03,123 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,131 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,138 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,142 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,200 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,205 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,212 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,216 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,272 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,281 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,288 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,291 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:03,349 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,354 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,361 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,365 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,421 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,427 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,434 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,438 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,494 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,501 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,508 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,513 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,570 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,579 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,587 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,591 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:03,649 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,656 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,663 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,667 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:03,722 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,732 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,739 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,744 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,801 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,808 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,818 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,824 INFO    [1001] fire 1,265,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:03,882 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,888 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,895 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,901 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:03,958 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,966 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:03,972 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:03,978 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:04,034 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,040 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,049 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,055 INFO    [1001] fire 1,265,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:04,111 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,119 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,125 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,132 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:04,188 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,195 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,201 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,207 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:04,265 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,271 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,279 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,285 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:04,339 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,348 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,355 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,361 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:04,420 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,428 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,437 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,443 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:04,497 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,498 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,500 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,504 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:04,556 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,558 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,560 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,565 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:04,620 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,626 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,633 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,639 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:04,697 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,703 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,709 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,716 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:04,772 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,782 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,790 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,797 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:04,853 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,859 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,866 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,872 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:04,928 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,935 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:04,943 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:04,948 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:05,004 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,010 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,020 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,024 INFO    [1001] fire 1,265,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:05,080 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,088 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,097 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,101 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:05,155 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,158 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,164 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,167 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:05,218 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,220 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,222 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,225 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,277 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,279 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,281 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,283 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,334 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,336 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,338 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,339 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,391 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,393 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,395 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,397 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,450 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,451 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,453 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,456 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,508 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,510 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,512 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,515 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:05,567 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,569 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,572 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,574 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:05,627 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,630 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,634 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,636 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:05,689 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,693 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,696 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,707 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:05,761 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,766 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,770 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,773 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:05,827 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,831 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,835 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,837 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:05,890 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,894 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,898 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,900 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:05,952 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,956 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:05,961 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:05,963 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:06,017 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,021 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,026 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,029 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:06,082 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,087 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,091 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,094 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:06,149 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,153 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,157 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,162 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:06,216 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,220 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,225 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,229 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:06,283 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,287 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,291 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,296 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:06,352 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,357 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,363 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,370 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:06,426 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,433 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,440 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,445 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:06,501 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,507 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,516 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,520 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:06,577 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,586 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,592 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,599 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:06,651 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,653 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,655 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,659 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:06,714 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,716 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,720 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,724 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:06,776 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,777 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,779 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,783 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:06,835 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,837 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,838 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,842 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:06,895 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,898 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,901 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,905 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:06,960 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,965 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:06,971 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:06,975 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:07,033 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,037 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,042 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,047 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:07,102 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,108 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,115 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,120 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,176 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,184 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,190 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,196 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:07,251 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,257 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,264 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,267 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,268 INFO    [1001] summary: mode=contest tail=300ms rem=395.9s reads=50 p50=4ms p95=8ms writes=50 p50=5ms p95=8ms prop=0 p50=0ms p95=0ms bids=142 last=— current=1,260,000
+2026-09-25 22:29:07,323 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,334 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,342 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,346 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:07,401 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,406 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,414 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,418 INFO    [1001] fire 1,265,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:07,473 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,482 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,489 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,492 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,549 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,555 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,562 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,566 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,621 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,628 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,636 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,639 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:07,697 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,703 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,710 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,713 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,768 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,774 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,781 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,784 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:07,839 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,848 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,856 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,860 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:07,916 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,922 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:07,934 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:07,938 INFO    [1001] fire 1,265,000 (contest) → success=False (0.012s)
+2026-09-25 22:29:07,993 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,002 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,009 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,012 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,068 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,077 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,087 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,091 INFO    [1001] fire 1,265,000 (contest) → success=False (0.011s)
+2026-09-25 22:29:08,149 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,155 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,162 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,166 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,221 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,229 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,237 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,240 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:08,300 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,305 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,312 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,315 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,371 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,383 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,391 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,394 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:08,452 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,458 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,465 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,470 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,526 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,535 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,541 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,546 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:08,602 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,608 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,616 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,621 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:08,677 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,686 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,693 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,701 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,755 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,762 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,769 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,774 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:08,833 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,840 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,848 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,851 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:08,915 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,926 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,933 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:08,935 INFO    [1001] fire 1,265,000 (contest) → success=False (0.005s)
+2026-09-25 22:29:08,994 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:08,998 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,008 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,013 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:09,065 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,067 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,069 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,073 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:09,125 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,127 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,129 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,130 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:09,185 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,192 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,203 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,206 INFO    [1001] fire 1,265,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:09,263 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,269 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,275 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,279 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,335 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,341 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,348 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,351 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,406 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,414 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,420 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,423 INFO    [1001] fire 1,265,000 (contest) → success=False (0.006s)
+2026-09-25 22:29:09,480 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,486 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,497 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,502 INFO    [1001] fire 1,265,000 (contest) → success=False (0.011s)
+2026-09-25 22:29:09,559 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,566 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,572 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,576 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,632 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,639 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,646 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,649 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,704 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,712 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,719 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,722 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,778 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,784 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,791 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,794 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:09,849 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,855 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,863 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,866 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:09,921 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,928 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:09,935 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:09,939 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:09,996 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,002 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,008 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,011 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:10,068 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,075 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,083 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,086 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:10,144 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,152 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,160 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,164 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:10,219 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,225 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,234 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,237 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:10,292 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,301 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,310 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,314 INFO    [1001] fire 1,265,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:10,369 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,374 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,382 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,385 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:10,441 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,449 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,456 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,459 INFO    [1001] fire 1,265,000 (contest) → success=False (0.007s)
+2026-09-25 22:29:10,516 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,525 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,535 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,538 INFO    [1001] fire 1,265,000 (contest) → success=False (0.010s)
+2026-09-25 22:29:10,593 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,598 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,601 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,605 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:10,666 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,669 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,678 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,686 INFO    [1001] fire 1,265,000 (contest) → success=False (0.011s)
+2026-09-25 22:29:10,738 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,740 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,742 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,746 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:10,797 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,799 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,801 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,805 INFO    [1001] fire 1,265,000 (contest) → success=False (0.002s)
+2026-09-25 22:29:10,857 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,860 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,863 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,867 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:10,923 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,930 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:10,940 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:10,945 INFO    [1001] fire 1,265,000 (contest) → success=False (0.008s)
+2026-09-25 22:29:11,001 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,008 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,017 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,022 INFO    [1001] fire 1,265,000 (contest) → success=False (0.009s)
+2026-09-25 22:29:11,075 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,078 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,081 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,084 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,137 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,139 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,142 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,146 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,198 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,201 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,203 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,207 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,260 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,263 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,265 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,269 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,322 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,325 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,329 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,333 INFO    [1001] fire 1,265,000 (contest) → success=False (0.004s)
+2026-09-25 22:29:11,386 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,388 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,391 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,395 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,447 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,449 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,452 INFO    HTTP Request: POST http://localhost:9000/wp-admin/admin-ajax.php "HTTP/1.1 404 Not Found"
+2026-09-25 22:29:11,453 INFO    [1001] fire 1,265,000 (contest) → success=False (0.003s)
+2026-09-25 22:29:11,509 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,515 INFO    HTTP Request: GET http://localhost:9000/wp-json/wc/store/v1/products/1001 "HTTP/1.1 200 OK"
+2026-09-25 22:29:11,517 WARNING [1001] bid cap reached (200) — giving up
+2026-09-25 22:29:11,517 INFO    [1001] endgame done: bids=200 last_bid=—
+2026-09-25 22:29:11,576 INFO    done

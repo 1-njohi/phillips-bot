@@ -9,7 +9,6 @@ return new class extends Migration
         public function up(): void
     {
         Schema::dropIfExists('bids');
-        Schema::dropIfExists('armed_bids');
 
         Schema::table('vehicles', function (Blueprint $table) {
             if (!Schema::hasColumn('vehicles', 'current_price')) {

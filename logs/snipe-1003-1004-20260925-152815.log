@@ -1,0 +1,16 @@
+2026-09-25 15:28:15,769 INFO    log file: logs/snipe-1003-1004-20260925-152815.log
+2026-09-25 15:28:15,769 INFO    target: product=1003  slug=subaru-forester-2018  max=4,500,000
+2026-09-25 15:28:15,770 INFO    target: product=1004  slug=nissan-navara-2021  max=4,500,000
+2026-09-25 15:28:17,699 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-25 15:28:17,706 INFO    clock offset: +0.055s  (rtt=1510ms, samples=1)
+2026-09-25 15:28:18,255 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-25 15:28:18,256 INFO    clock offset: +0.055s  (rtt=550ms, samples=2)
+2026-09-25 15:28:18,258 INFO    [1003] starting  max=4,500,000
+2026-09-25 15:28:18,262 INFO    [1004] starting  max=4,500,000
+2026-09-25 15:28:19,069 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/nissan-navara-2021/ "HTTP/2 404 Not Found"
+2026-09-25 15:28:19,308 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/subaru-forester-2018/ "HTTP/2 404 Not Found"
+2026-09-25 15:28:19,588 ERROR   product page status 404 (subaru-forester-2018)
+2026-09-25 15:28:19,591 ERROR   [1003] could not determine finish time
+2026-09-25 15:28:19,589 ERROR   product page status 404 (nissan-navara-2021)
+2026-09-25 15:28:19,592 ERROR   [1004] could not determine finish time
+2026-09-25 15:28:19,594 INFO    done

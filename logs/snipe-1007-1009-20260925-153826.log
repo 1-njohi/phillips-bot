@@ -1,0 +1,20 @@
+2026-09-25 15:38:26,665 INFO    log file: logs/snipe-1007-1009-20260925-153826.log
+2026-09-25 15:38:26,665 INFO    target: product=1007  slug=honda-cr-v-2019  max=10,000,000
+2026-09-25 15:38:26,666 INFO    target: product=1009  slug=mercedes-benz-c200-2018  max=10,000,000
+2026-09-25 15:38:26,975 INFO    HTTP Request: HEAD http://localhost:8000/ "HTTP/1.1 401 Unauthorized"
+2026-09-25 15:38:26,984 INFO    clock offset: -0.902s  (rtt=150ms, samples=1)
+2026-09-25 15:38:27,640 INFO    HTTP Request: HEAD http://localhost:8000/ "HTTP/1.1 401 Unauthorized"
+2026-09-25 15:38:27,641 INFO    clock offset: -0.313s  (rtt=657ms, samples=2)
+2026-09-25 15:38:27,643 INFO    [1007] starting  max=10,000,000
+2026-09-25 15:38:27,644 INFO    [1009] starting  max=10,000,000
+2026-09-25 15:38:27,990 INFO    HTTP Request: GET http://localhost:8000/product/honda-cr-v-2019/ "HTTP/1.1 200 OK"
+2026-09-25 15:38:27,995 INFO    [1007] finish_time=1790340193  remaining=285s
+2026-09-25 15:38:28,167 INFO    HTTP Request: GET http://localhost:8000/product/mercedes-benz-c200-2018/ "HTTP/1.1 200 OK"
+2026-09-25 15:38:28,168 INFO    [1009] finish_time=1790340193  remaining=285s
+2026-09-25 15:38:28,179 INFO    HTTP Request: GET http://localhost:8000/wp-json/wc/store/v1/products/1007 "HTTP/1.0 404 Not Found"
+2026-09-25 15:38:28,180 WARNING store read status 404 (1007)
+2026-09-25 15:38:28,180 ERROR   [1007] store read failed — cookie may be invalid
+2026-09-25 15:38:28,190 INFO    HTTP Request: GET http://localhost:8000/wp-json/wc/store/v1/products/1009 "HTTP/1.0 404 Not Found"
+2026-09-25 15:38:28,191 WARNING store read status 404 (1009)
+2026-09-25 15:38:28,191 ERROR   [1009] store read failed — cookie may be invalid
+2026-09-25 15:38:28,191 INFO    done

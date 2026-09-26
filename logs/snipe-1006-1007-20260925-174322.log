@@ -1,0 +1,12 @@
+2026-09-25 17:43:22,795 INFO    log file: logs/snipe-1006-1007-20260925-174322.log
+2026-09-25 17:43:22,795 INFO    target: product=1006  slug=toyota-land-cruiser-prado-2016  max=6,000,000
+2026-09-25 17:43:22,795 INFO    target: product=1007  slug=toyota-land-cruiser-prado-2016  max=6,000,000
+2026-09-25 17:43:22,852 WARNING clock sync failed: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)
+2026-09-25 17:43:22,853 WARNING clock sync failed: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)
+2026-09-25 17:43:22,854 INFO    [1006] starting  max=6,000,000
+2026-09-25 17:43:22,854 INFO    [1007] starting  max=6,000,000
+2026-09-25 17:43:22,856 ERROR   product page fetch failed (toyota-land-cruiser-prado-2016): [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)
+2026-09-25 17:43:22,856 ERROR   [1006] could not determine finish time
+2026-09-25 17:43:22,857 ERROR   product page fetch failed (toyota-land-cruiser-prado-2016): [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1082)
+2026-09-25 17:43:22,857 ERROR   [1007] could not determine finish time
+2026-09-25 17:43:22,857 INFO    done

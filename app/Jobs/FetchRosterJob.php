@@ -19,20 +19,41 @@ class FetchRosterJob implements ShouldQueue
 
     public function handle(): void
     {
-        $rows = AuctionClient::fromConfig()->roster();
+        $client = AuctionClient::fromConfig();
+        $rows = $client->roster();
 
         if (empty($rows)) {
             Log::warning('Roster fetch returned no products.');
             return;
         }
 
-        $new = 0;
+        // One finish-time probe per category. On this auctioneer's
+        // site, all products in a category close at the same time.
+        // Three categories → three page fetches per sync, not 100.
+        $finishByCategory = [];
+        foreach ($rows as $row) {
+            $categoryId = $row['categories'][0] ?? null;
+            if (!$categoryId || !$row['slug'] || isset($finishByCategory[$categoryId])) {
+                continue;
+            }
 
+            $finishByCategory[$categoryId] = $client->finishTimeForSlug($row['slug']);
+            Log::info("Finish probe: category {$categoryId} → " . ($finishByCategory[$categoryId] ?? 'null'));
+
+            // Be polite: 300ms between page fetches.
+            usleep(300_000);
+        }
+
+        $new = 0;
+        $resolved = 0;
 
         foreach ($rows as $row) {
-            // if (!$row['finish_time']) {
-            //     continue; // skip non-auction products
-            // }
+            $categoryId = $row['categories'][0] ?? null;
+            $finishTs = $finishByCategory[$categoryId] ?? null;
+
+            if ($finishTs !== null) {
+                $resolved++;
+            }
 
             $vehicle = Vehicle::updateOrCreate(
                 ['wp_product_id' => $row['id']],
@@ -40,7 +61,9 @@ class FetchRosterJob implements ShouldQueue
                     'name' => $row['name'],
                     'slug' => $row['slug'],
                     'categories' => $row['categories'],
-                    'finish_time' => now()-> addMinute(20),// setTimestamp($row['finish_time']),
+                    'finish_time' => $finishTs
+                        ? \Carbon\CarbonImmutable::createFromTimestamp($finishTs)
+                        : \Carbon\Carbon::now()->addMinutes(908),
                     'wp_modified_at' => $row['modified'],
                 ]
             );
@@ -51,6 +74,6 @@ class FetchRosterJob implements ShouldQueue
             }
         }
 
-        Log::info("Roster fetch: {$new} new, " . count($rows) . ' total.');
+        Log::info("Roster fetch: {$new} new, {$resolved} with finish times, " . count($rows) . ' total.');
     }
 }

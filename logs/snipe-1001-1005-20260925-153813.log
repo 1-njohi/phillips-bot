@@ -1,0 +1,20 @@
+2026-09-25 15:38:13,333 INFO    log file: logs/snipe-1001-1005-20260925-153813.log
+2026-09-25 15:38:13,334 INFO    target: product=1001  slug=toyota-hilux-2019  max=3,000,000
+2026-09-25 15:38:13,335 INFO    target: product=1005  slug=isuzu-d-max-2017  max=4,000,000
+2026-09-25 15:38:13,942 INFO    HTTP Request: HEAD http://localhost:8000/ "HTTP/1.1 401 Unauthorized"
+2026-09-25 15:38:13,956 INFO    clock offset: -0.763s  (rtt=362ms, samples=1)
+2026-09-25 15:38:14,031 INFO    HTTP Request: HEAD http://localhost:8000/ "HTTP/1.1 401 Unauthorized"
+2026-09-25 15:38:14,033 INFO    clock offset: +0.005s  (rtt=76ms, samples=2)
+2026-09-25 15:38:14,038 INFO    [1001] starting  max=3,000,000
+2026-09-25 15:38:14,042 INFO    [1005] starting  max=4,000,000
+2026-09-25 15:38:14,411 INFO    HTTP Request: GET http://localhost:8000/product/toyota-hilux-2019/ "HTTP/1.1 200 OK"
+2026-09-25 15:38:14,414 INFO    [1001] finish_time=1790340192  remaining=298s
+2026-09-25 15:38:14,692 INFO    HTTP Request: GET http://localhost:8000/product/isuzu-d-max-2017/ "HTTP/1.1 200 OK"
+2026-09-25 15:38:14,697 INFO    [1005] finish_time=1790340193  remaining=298s
+2026-09-25 15:38:14,743 INFO    HTTP Request: GET http://localhost:8000/wp-json/wc/store/v1/products/1001 "HTTP/1.0 404 Not Found"
+2026-09-25 15:38:14,746 WARNING store read status 404 (1001)
+2026-09-25 15:38:14,748 ERROR   [1001] store read failed — cookie may be invalid
+2026-09-25 15:38:14,799 INFO    HTTP Request: GET http://localhost:8000/wp-json/wc/store/v1/products/1005 "HTTP/1.0 404 Not Found"
+2026-09-25 15:38:14,802 WARNING store read status 404 (1005)
+2026-09-25 15:38:14,802 ERROR   [1005] store read failed — cookie may be invalid
+2026-09-25 15:38:14,804 INFO    done

@@ -1,0 +1,11 @@
+2026-09-25 21:58:30,740 INFO    log file: logs/snipe-1001-20260925-215830.log
+2026-09-25 21:58:30,749 INFO    target: product=1001  vehicle_id=1  armed_bid_id=1  max=500,000
+2026-09-25 21:58:33,571 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 21:58:33,935 INFO    clock offset: -0.153s  (rtt=1151ms, samples=1)
+2026-09-25 21:58:34,344 INFO    HTTP Request: HEAD http://localhost:9000/ "HTTP/1.1 404 Not Found"
+2026-09-25 21:58:34,421 INFO    clock offset: -0.153s  (rtt=443ms, samples=2)
+2026-09-25 21:58:34,462 INFO    [1001] starting  max=500,000
+2026-09-25 21:58:34,785 INFO    HTTP Request: GET http://localhost:9000/product/test/ "HTTP/1.1 404 Not Found"
+2026-09-25 21:58:34,822 ERROR   product page status 404 (test)
+2026-09-25 21:58:34,822 ERROR   [1001] could not determine finish time
+2026-09-25 21:58:34,886 INFO    done

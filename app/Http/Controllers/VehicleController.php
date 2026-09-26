@@ -45,7 +45,7 @@ class VehicleController extends Controller
                 'base_price' => $basePrice,
                 'current_price' => $vehicle->current_price,
                 'bid_count' => $bidCount,
-                'increment' => 5000,
+                'increment' => (int) config('auction.increment'),
                 'started_at' => $history->first()?->recorded_at?->timestamp,
                 'close_at' => $vehicle->finish_time?->timestamp,
                 'seconds_left' => $secondsLeft,
