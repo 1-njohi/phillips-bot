@@ -36,8 +36,7 @@ class AuctionClient
     public function roster(int $perPage = 100): array
     {
         $res = $this->client()->get('/wp-json/wp/v2/product', [
-            'per_page' => $perPage,
-            '_fields' => 'id,slug,title,modified,product_cat,auction',
+            'per_page' => $perPage
         ]);
 
         AuctionClock::observe($res->header('Date'));
