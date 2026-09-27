@@ -15,11 +15,10 @@ return new class extends Migration {
             $table->foreignId('vehicle_id')->constrained()->cascadeOnDelete();
             $table->unsignedInteger('price');
             $table->string('state_text')->nullable();
+            $table->enum('source', ['monitor', 'sniper', 'manual'])
+                ->default('monitor');
             $table->timestamp('recorded_at')->index();
             $table->index(['vehicle_id', 'recorded_at']);
-            $table->enum('source', ['monitor', 'sniper', 'manual'])
-                ->default('monitor')
-                ->after('state_text');
         });
     }
 
