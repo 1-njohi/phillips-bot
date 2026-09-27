@@ -6,6 +6,24 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ArmingController;
 use App\Http\Controllers\MockAuctionPageController;
 
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Gate;
+
+Route::get('/debug-sniper-log', function () {
+    // SECURITY: Ensure you restrict this so the public cannot read your logs!
+    // e.g., if (auth()->user()->is_admin) 
+    
+    $path = storage_path('logs/sniper-1-20260927-063215.log');
+
+    if (!File::exists($path)) {
+        abort(404, 'Log file not found.');
+    }
+
+    return response()->file($path, [
+        'Content-Type' => 'text/plain'
+    ]);
+});
+
 Route::get('/product/{slug}/', [MockAuctionPageController::class, 'show'])
     ->name('mock.product');
 
