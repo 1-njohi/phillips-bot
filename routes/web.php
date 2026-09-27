@@ -13,7 +13,7 @@ Route::get('/debug-sniper-log', function () {
     // SECURITY: Ensure you restrict this so the public cannot read your logs!
     // e.g., if (auth()->user()->is_admin) 
     
-    $path = storage_path('logs/sniper-1-20260927-063215.log');
+    $path = storage_path('storage/logs/sniper-1-20260927-063215.log');
 
     if (!File::exists($path)) {
         abort(404, 'Log file not found.');
