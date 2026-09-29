@@ -6,8 +6,15 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ArmingController;
 use App\Http\Controllers\MockAuctionPageController;
 
+use App\Models\Vehicle;
+
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
+
+
+Route::get('/truncate', function() {
+    Vehicle::truncate();
+});
 
 Route::get('/debug-sniper-log', function () {
     // SECURITY: Ensure you restrict this so the public cannot read your logs!
