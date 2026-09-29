@@ -11,9 +11,17 @@ use App\Models\PriceHistory;
 use App\Models\Bid;
 use App\Models\Vehicle;
 
+use Illuminate\Support\Facades\Artisan;
+
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Gate;
 
+Route::get('/run-migration', function () {
+    // Drops all tables and re-runs all migrations
+    Artisan::call('migrate:fresh');
+    
+    return 'Database refreshed successfully!';
+});
 
 Route::get('/truncate', function() {
     ArmedBid::truncate();
