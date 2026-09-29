@@ -22,7 +22,7 @@ class DashboardController extends Controller
     {
         $vehicles = Vehicle::query()
         ->orderBy('created_at', 'ASC')
-        ->take(50)
+        // ->take(50)
             ->get()
             ->map(fn(Vehicle $v) => [
                 'id' => $v->id,
