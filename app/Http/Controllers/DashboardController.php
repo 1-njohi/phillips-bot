@@ -21,6 +21,8 @@ class DashboardController extends Controller
     public function state(): JsonResponse
     {
         $vehicles = Vehicle::query()
+        ->orderBy('created_at', 'ASC')
+        ->take(50)
             ->get()
             ->map(fn(Vehicle $v) => [
                 'id' => $v->id,
