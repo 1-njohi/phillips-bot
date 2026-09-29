@@ -8,6 +8,7 @@ use App\Http\Controllers\MockAuctionPageController;
 
 use App\Models\ArmedBid;
 use App\Models\PriceHistory;
+use App\Models\Bid;
 use App\Models\Vehicle;
 
 use Illuminate\Support\Facades\File;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Gate;
 
 Route::get('/truncate', function() {
     ArmedBid::truncate();
+    Bid::truncate();
     PriceHistory::truncate();
     Vehicle::truncate();
 });
