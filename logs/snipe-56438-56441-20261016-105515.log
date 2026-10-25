@@ -1,0 +1,24 @@
+2026-10-16 10:55:15,805 INFO    log file: logs/snipe-56438-56441-20261016-105515.log
+2026-10-16 10:55:15,806 INFO    target: product=56438  vehicle_id=5  armed_bid_id=12  max=1,500,000
+2026-10-16 10:55:15,806 INFO    target: product=56441  vehicle_id=6  armed_bid_id=13  max=800,000
+2026-10-16 10:55:15,914 INFO    [auth] mode=login (wp-login.php)
+2026-10-16 10:55:17,384 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-10-16 10:55:18,097 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-10-16 10:55:19,011 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 10:55:19,837 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-10-16 10:55:20,486 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 10:55:21,073 INFO    [auth] logged in as kodembe@yahoo.com
+2026-10-16 10:55:21,074 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-10-16 10:55:22,195 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 10:55:22,209 INFO    clock offset: +0.364s  (rtt=1120ms, samples=1)
+2026-10-16 10:55:22,810 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 10:55:22,810 INFO    clock offset: +0.364s  (rtt=601ms, samples=2)
+2026-10-16 10:55:22,811 INFO    [56438] starting  max=1,500,000
+2026-10-16 10:55:22,813 INFO    [56441] starting  max=800,000
+2026-10-16 10:55:23,633 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kds-974y-isuzu-frr90/ "HTTP/2 404 Not Found"
+2026-10-16 10:55:24,548 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdk-156x-mercedes-benz-actros/ "HTTP/2 404 Not Found"
+2026-10-16 10:55:24,763 ERROR   product page status 404 (kds-974y-isuzu-frr90)
+2026-10-16 10:55:24,764 ERROR   [56441] could not determine finish time
+2026-10-16 10:55:25,353 ERROR   product page status 404 (kdk-156x-mercedes-benz-actros)
+2026-10-16 10:55:25,353 ERROR   [56438] could not determine finish time
+2026-10-16 10:55:25,355 INFO    done

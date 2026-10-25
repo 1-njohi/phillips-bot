@@ -29,7 +29,7 @@ const currentUrlReactive = computed(
             page.url,
             typeof window !== 'undefined'
                 ? window.location.origin
-                : 'http://localhost',
+                : 'https://08ed-102-0-16-184.ngrok-free.app',
         ).pathname,
 );
 

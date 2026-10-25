@@ -1,0 +1,4 @@
+2026-10-16 10:46:17,936 INFO    log file: logs/snipe-56438-56441-20261016-104617.log
+2026-10-16 10:46:17,936 INFO    target: product=56438  vehicle_id=5  armed_bid_id=12  max=1,500,000
+2026-10-16 10:46:17,936 INFO    target: product=56441  vehicle_id=6  armed_bid_id=13  max=800,000
+2026-10-16 10:46:17,937 ERROR   db connect failed (database/database.sqlite): unable to open database file

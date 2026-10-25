@@ -1,0 +1,34 @@
+2026-09-30 14:27:59,490 INFO    log file: logs/snipe-56332-20260930-142759.log
+2026-09-30 14:27:59,490 INFO    target: product=56332  vehicle_id=1  armed_bid_id=1  max=700,000
+2026-09-30 14:27:59,567 INFO    [auth] mode=login (wp-login.php)
+2026-09-30 14:28:01,042 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-09-30 14:28:01,724 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-09-30 14:28:02,858 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:28:03,671 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-09-30 14:28:04,389 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:28:05,103 INFO    [auth] logged in as ernestotieno95@gmail.com
+2026-09-30 14:28:05,104 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-09-30 14:28:06,619 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:28:06,627 INFO    clock offset: +0.137s  (rtt=1515ms, samples=1)
+2026-09-30 14:28:07,258 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:28:07,259 INFO    clock offset: +0.137s  (rtt=631ms, samples=2)
+2026-09-30 14:28:07,260 INFO    [56332] starting  max=700,000
+2026-09-30 14:28:08,503 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdh-018g-toyota-kluger/ "HTTP/2 200 OK"
+2026-09-30 14:28:08,673 INFO    [56332] finish_time=1789572780  remaining=-1194909s
+2026-09-30 14:28:09,401 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:28:09,403 INFO    [56332] initial state=View
+2026-09-30 14:28:10,031 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:28:10,033 INFO    [56332] initial price=639,000
+2026-09-30 14:28:10,633 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:28:10,634 INFO    clock offset: +0.057s  (rtt=601ms, samples=3)
+2026-09-30 14:28:12,656 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdh-018g-toyota-kluger/ "HTTP/2 200 OK"
+2026-09-30 14:28:13,195 ERROR   [56332] worker crashed: 'PhillipsClient' object has no attribute '_nonce_lock'
+Traceback (most recent call last):
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 855, in vehicle_worker
+    if not client.refresh_nonce(vehicle.slug):
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 486, in refresh_nonce
+    with self._nonce_lock:
+         ^^^^^^^^^^^^^^^^
+AttributeError: 'PhillipsClient' object has no attribute '_nonce_lock'. Did you mean: '_clock_lock'?
+2026-09-30 14:28:13,199 INFO    done

@@ -1,0 +1,9 @@
+2026-09-30 15:01:31,158 INFO    log file: logs/snipe-56332-20260930-150131.log
+2026-09-30 15:01:31,159 INFO    target: product=56332  vehicle_id=1  armed_bid_id=1  max=700,000
+2026-09-30 15:01:31,279 INFO    [auth] mode=login (wp-login.php)
+2026-09-30 15:01:33,034 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-09-30 15:01:33,745 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-09-30 15:01:33,746 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/wp-login.php
+2026-09-30 15:01:34,460 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 15:01:35,083 ERROR   [auth] wp-login.php rejected credentials
+2026-09-30 15:01:35,083 ERROR   [auth] hint: retry with --cookie '<browser Cookie header>' if wp-login.php is blocked

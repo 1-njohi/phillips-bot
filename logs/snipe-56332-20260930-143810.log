@@ -1,0 +1,14 @@
+2026-09-30 14:38:10,049 INFO    log file: logs/snipe-56332-20260930-143810.log
+2026-09-30 14:38:10,049 INFO    target: product=56332  vehicle_id=1  armed_bid_id=1  max=700,000
+2026-09-30 14:38:10,160 INFO    [auth] mode=login (wp-login.php)
+2026-09-30 14:38:12,046 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-09-30 14:38:12,764 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-09-30 14:38:13,577 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:38:14,186 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-09-30 14:38:15,116 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:38:15,413 INFO    [auth] logged in as ernestotieno95@gmail.com
+2026-09-30 14:38:15,418 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-09-30 14:38:16,861 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:38:16,864 INFO    clock offset: -0.143s  (rtt=1437ms, samples=1)
+2026-09-30 14:38:16,882 INFO    interrupted by user
+2026-09-30 14:38:16,883 INFO    done

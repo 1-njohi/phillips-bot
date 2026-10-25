@@ -1,0 +1,4 @@
+2026-10-16 12:37:19,235 INFO    log file: logs/proxy-56922-56920-20261016-123719.log
+2026-10-16 12:37:19,236 INFO    target: product=56922 vehicle_id=10 armed_bid_id=10 max=465,000
+2026-10-16 12:37:19,237 INFO    target: product=56920 vehicle_id=12 armed_bid_id=13 max=920,000
+2026-10-16 12:37:19,238 INFO    [auth] mode=login

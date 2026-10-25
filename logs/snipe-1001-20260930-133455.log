@@ -1,0 +1,8 @@
+2026-09-30 13:34:55,274 INFO    log file: logs/snipe-1001-20260930-133455.log
+2026-09-30 13:34:55,274 INFO    target: product=1001  vehicle_id=1  armed_bid_id=1  max=5,000,000
+2026-09-30 13:34:55,382 WARNING clock sync failed: [Errno 111] Connection refused
+2026-09-30 13:34:55,382 WARNING clock sync failed: [Errno 111] Connection refused
+2026-09-30 13:34:55,383 INFO    [1001] starting  max=5,000,000
+2026-09-30 13:34:55,384 ERROR   product page fetch failed (toyota-hilux-2019): [Errno 111] Connection refused
+2026-09-30 13:34:55,384 ERROR   [1001] could not determine finish time
+2026-09-30 13:34:55,385 INFO    done

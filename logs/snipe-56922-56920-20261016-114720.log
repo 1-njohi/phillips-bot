@@ -1,0 +1,23 @@
+2026-10-16 11:47:20,469 INFO    log file: logs/snipe-56922-56920-20261016-114720.log
+2026-10-16 11:47:20,470 INFO    target: product=56922  vehicle_id=10  armed_bid_id=10  max=65,000
+2026-10-16 11:47:20,471 INFO    target: product=56920  vehicle_id=12  armed_bid_id=13  max=70,000
+2026-10-16 11:47:20,562 INFO    [auth] mode=login (wp-login.php)
+2026-10-16 11:47:22,130 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-10-16 11:47:22,846 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-10-16 11:47:23,974 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 11:47:24,790 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-10-16 11:47:25,509 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 11:47:26,433 INFO    [auth] logged in as kodembe@yahoo.com
+2026-10-16 11:47:26,436 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-10-16 11:47:27,761 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 11:47:27,775 INFO    clock offset: -0.100s  (rtt=1324ms, samples=1)
+2026-10-16 11:47:28,375 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 11:47:28,376 INFO    clock offset: -0.076s  (rtt=600ms, samples=2)
+2026-10-16 11:47:28,378 INFO    [56922] starting  max=65,000
+2026-10-16 11:47:28,379 INFO    [56920] starting  max=70,000
+2026-10-16 11:47:28,576 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdw-500l-mercedes-vito/ "HTTP/2 400 Bad Request"
+2026-10-16 11:47:28,577 ERROR   product page status 400 (kdw-500l-mercedes-vito)
+2026-10-16 11:47:28,577 ERROR   [56920] could not determine finish time
+2026-10-16 11:47:28,579 ERROR   product page fetch failed (kde-429z-subaru-forester): <ConnectionTerminated error_code:1, last_stream_id:7, additional_data:None>
+2026-10-16 11:47:28,580 ERROR   [56922] could not determine finish time
+2026-10-16 11:47:28,582 INFO    done

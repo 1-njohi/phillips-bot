@@ -1,0 +1,24 @@
+2026-10-16 10:53:16,235 INFO    log file: logs/snipe-56438-56441-20261016-105316.log
+2026-10-16 10:53:16,236 INFO    target: product=56438  vehicle_id=5  armed_bid_id=12  max=1,500,000
+2026-10-16 10:53:16,236 INFO    target: product=56441  vehicle_id=6  armed_bid_id=13  max=800,000
+2026-10-16 10:53:16,304 INFO    [auth] mode=login (wp-login.php)
+2026-10-16 10:53:17,503 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-10-16 10:53:18,186 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-10-16 10:53:19,314 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 10:53:20,111 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-10-16 10:53:20,777 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 10:53:21,464 INFO    [auth] logged in as kodembe@yahoo.com
+2026-10-16 10:53:21,466 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-10-16 10:53:22,914 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 10:53:22,925 INFO    clock offset: -0.191s  (rtt=1448ms, samples=1)
+2026-10-16 10:53:23,613 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 10:53:23,613 INFO    clock offset: -0.191s  (rtt=688ms, samples=2)
+2026-10-16 10:53:23,617 INFO    [56438] starting  max=1,500,000
+2026-10-16 10:53:23,620 INFO    [56441] starting  max=800,000
+2026-10-16 10:53:24,840 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kds-974y-isuzu-frr90/ "HTTP/2 404 Not Found"
+2026-10-16 10:53:25,149 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdk-156x-mercedes-benz-actros/ "HTTP/2 404 Not Found"
+2026-10-16 10:53:27,300 ERROR   product page status 404 (kdk-156x-mercedes-benz-actros)
+2026-10-16 10:53:27,301 ERROR   [56438] could not determine finish time
+2026-10-16 10:53:27,301 ERROR   product page status 404 (kds-974y-isuzu-frr90)
+2026-10-16 10:53:27,302 ERROR   [56441] could not determine finish time
+2026-10-16 10:53:27,304 INFO    done

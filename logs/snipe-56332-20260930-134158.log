@@ -1,0 +1,17 @@
+2026-09-30 13:41:58,262 INFO    log file: logs/snipe-56332-20260930-134158.log
+2026-09-30 13:41:58,263 INFO    target: product=56332  vehicle_id=1  armed_bid_id=1  max=5,000,000
+2026-09-30 13:41:59,702 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 13:41:59,717 INFO    clock offset: -0.018s  (rtt=1370ms, samples=1)
+2026-09-30 13:42:00,414 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 13:42:00,416 INFO    clock offset: -0.018s  (rtt=697ms, samples=2)
+2026-09-30 13:42:00,417 INFO    [56332] starting  max=5,000,000
+2026-09-30 13:42:01,998 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/KDH-018G-TOYOTA-KLUGER/ "HTTP/2 200 OK"
+2026-09-30 13:42:03,178 ERROR   [56332] worker crashed: 'str' object has no attribute 'group'
+Traceback (most recent call last):
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 713, in vehicle_worker
+    finish_ts = client.fetch_finish_time(vehicle.slug)
+  File "/home/wanjohi/Code/Web/phillips-bot/app/Scripts/snipe.py", line 380, in fetch_finish_time
+    return int(m.group(1))
+               ^^^^^^^
+AttributeError: 'str' object has no attribute 'group'
+2026-09-30 13:42:03,184 INFO    done

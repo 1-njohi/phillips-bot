@@ -1,0 +1,41 @@
+2026-10-16 12:39:22,164 INFO    log file: logs/proxy-56922-56920-20261016-123922.log
+2026-10-16 12:39:22,166 INFO    target: product=56922 vehicle_id=10 armed_bid_id=10 max=465,000
+2026-10-16 12:39:22,168 INFO    target: product=56920 vehicle_id=12 armed_bid_id=13 max=920,000
+2026-10-16 12:39:22,169 INFO    [auth] mode=login
+2026-10-16 12:39:23,846 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-10-16 12:39:24,512 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-10-16 12:39:25,543 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 12:39:26,460 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-10-16 12:39:27,106 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-10-16 12:39:27,793 INFO    [auth] logged in as kodembe@yahoo.com
+2026-10-16 12:39:27,794 INFO    [auth] 7 cookies harvested
+2026-10-16 12:39:27,795 INFO    [56922] starting  max=465,000
+2026-10-16 12:39:27,795 INFO    [56920] starting  max=920,000
+2026-10-16 12:39:27,841 INFO    [56922] 7 cookies installed
+2026-10-16 12:39:27,859 INFO    [56920] 7 cookies installed
+2026-10-16 12:39:29,227 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 12:39:29,247 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 12:39:29,262 INFO    [56922] clock offset: +0.456s (rtt=1404ms, n=1)
+2026-10-16 12:39:29,262 INFO    [56920] clock offset: +0.446s (rtt=1390ms, n=1)
+2026-10-16 12:39:29,857 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 12:39:29,857 INFO    [56920] clock offset: +0.446s (rtt=586ms, n=2)
+2026-10-16 12:39:29,858 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-10-16 12:39:29,864 INFO    [56922] clock offset: +0.456s (rtt=600ms, n=2)
+2026-10-16 12:39:30,870 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kde-429z-subaru-forester/ "HTTP/2 200 OK"
+2026-10-16 12:39:30,878 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdw-500l-mercedes-vito/ "HTTP/2 200 OK"
+2026-10-16 12:39:31,995 INFO    [56920] finish_time=1792144800 remaining=1228s
+2026-10-16 12:39:32,029 INFO    [56922] finish_time=1792144800 remaining=1228s
+2026-10-16 12:39:33,836 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kde-429z-subaru-forester/ "HTTP/2 200 OK"
+2026-10-16 12:39:33,840 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdw-500l-mercedes-vito/ "HTTP/2 200 OK"
+2026-10-16 12:39:34,875 INFO    [56922] nonce=8e25e6dcaf
+2026-10-16 12:39:34,881 INFO    [56920] nonce=8e25e6dcaf
+2026-10-16 12:39:35,545 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56922 "HTTP/2 200 OK"
+2026-10-16 12:39:35,557 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56920 "HTTP/2 200 OK"
+2026-10-16 12:39:36,293 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56920 "HTTP/2 200 OK"
+2026-10-16 12:39:36,312 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56922 "HTTP/2 200 OK"
+2026-10-16 12:39:36,319 INFO    [56922] initial state=Bid now price=405,000
+2026-10-16 12:39:36,317 INFO    [56920] initial state=Bid now price=955,000
+2026-10-16 12:39:36,322 INFO    [56922] === proxy begins; finish in 1223s ===
+2026-10-16 12:39:36,322 INFO    [56920] === proxy begins; finish in 1223s ===
+2026-10-16 12:39:44,173 INFO    interrupted; waiting for workers to finish current tick
+2026-10-16 12:39:44,174 INFO    done

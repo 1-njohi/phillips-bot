@@ -1,0 +1,31 @@
+2026-09-30 14:31:02,805 INFO    log file: logs/snipe-56332-20260930-143102.log
+2026-09-30 14:31:02,805 INFO    target: product=56332  vehicle_id=1  armed_bid_id=1  max=700,000
+2026-09-30 14:31:02,902 INFO    [auth] mode=login (wp-login.php)
+2026-09-30 14:31:04,928 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 200 OK"
+2026-09-30 14:31:05,621 INFO    HTTP Request: POST https://phillipsauctioneers.co.ke/wp-login.php "HTTP/2 302 Found"
+2026-09-30 14:31:06,766 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:31:07,790 INFO    [auth] wp-login HTTP 200 → https://phillipsauctioneers.co.ke/my-account/
+2026-09-30 14:31:08,607 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/my-account/ "HTTP/2 200 OK"
+2026-09-30 14:31:09,428 INFO    [auth] logged in as ernestotieno95@gmail.com
+2026-09-30 14:31:09,429 INFO    [auth] 7 cookies installed on http_auth (from login)
+2026-09-30 14:31:10,962 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:31:10,970 INFO    clock offset: -0.196s  (rtt=1533ms, samples=1)
+2026-09-30 14:31:11,575 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:31:11,575 INFO    clock offset: -0.196s  (rtt=604ms, samples=2)
+2026-09-30 14:31:11,581 INFO    [56332] starting  max=700,000
+2026-09-30 14:31:12,941 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdh-018g-toyota-kluger/ "HTTP/2 200 OK"
+2026-09-30 14:31:14,243 WARNING data-finish-time not in HTML (kdh-018g-toyota-kluger); falling back to now+120s
+2026-09-30 14:31:14,243 INFO    [56332] finish_time=1790767994  remaining=120s
+2026-09-30 14:31:15,073 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:31:15,075 INFO    [56332] initial state=View
+2026-09-30 14:31:15,636 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:31:15,637 INFO    [56332] initial price=639,000
+2026-09-30 14:31:16,393 INFO    HTTP Request: HEAD https://phillipsauctioneers.co.ke/ "HTTP/2 200 OK"
+2026-09-30 14:31:16,394 INFO    clock offset: -0.196s  (rtt=757ms, samples=3)
+2026-09-30 14:31:18,542 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/product/kdh-018g-toyota-kluger/ "HTTP/2 200 OK"
+2026-09-30 14:31:19,771 INFO    [56332] === endgame begins ===
+2026-09-30 14:31:20,485 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:31:21,020 INFO    HTTP Request: GET https://phillipsauctioneers.co.ke/wp-json/wc/store/v1/products/56332 "HTTP/2 200 OK"
+2026-09-30 14:31:21,022 INFO    [56332] auction closed (state=View)
+2026-09-30 14:31:21,022 INFO    [56332] endgame done: bids=0 last_bid=—
+2026-09-30 14:31:21,024 INFO    done

@@ -164,11 +164,17 @@ class VehicleTarget:
 
 @dataclass
 class Config:
-    base_url: str = "http://localhost:9000"
+    base_url: str = "https://phillipsauctioneers.co.ke"
     vehicles: list[VehicleTarget] = field(default_factory=list)
     increment: int = 5000
+
+    # Auth. Populated by parse_args; nonce is overwritten at runtime
+    # by PhillipsClient.refresh_nonce().
+    username: str = ""
+    password: str = ""
+    cookie: str = ""          # populated only if --cookie was given
+    auth_mode: str = "login"  # "login" or "cookie"
     nonce: str = ""
-    cookie: str = ""
 
     # Read cadence
     poll_quiet_ms: int = 200       # 5 Hz
@@ -180,12 +186,11 @@ class Config:
     # Tail safety margin, ms, added on top of measured latencies
     tail_safety_ms: int = 150
 
-    # Minimum proactive tail, ms. Even if latencies measure to 0,
-    # keep at least this much tail for the endgame hedge.
+    # Minimum proactive tail, ms.
     tail_min_ms: int = 300
 
     # Latency measurement
-    latency_window: int = 50       # rolling samples
+    latency_window: int = 50
 
     # Logging cadence for the latency summary
     summary_every_s: float = 5.0
@@ -202,6 +207,76 @@ class Config:
 
     db_path: Path = field(default_factory=lambda: Path("database/database.sqlite"))
 
+    force_bid: bool = False 
+
+class AuthError(RuntimeError):
+    pass
+
+
+def login_and_get_cookies(
+    cfg: Config,
+    log: logging.Logger,
+) -> httpx.Cookies:
+    """
+    Log in via wp-login.php on a throwaway client and return the
+    resulting cookie jar. The caller transplants it into http_auth.
+
+    Raises AuthError on any failure. Does not touch cfg.cookie.
+    """
+    client = httpx.Client(
+        base_url=cfg.base_url,
+        timeout=httpx.Timeout(20.0, connect=8.0),
+        headers={
+            "User-Agent": cfg.user_agent,
+            "Accept-Language": "en-KE,en;q=0.9",
+        },
+        follow_redirects=True,
+        http2=True,
+    )
+    try:
+        # Prime: sets wordpress_test_cookie
+        client.get("/wp-login.php")
+
+        r = client.post(
+            "/wp-login.php",
+            data={
+                "log": cfg.username,
+                "pwd": cfg.password,
+                "wp-submit": "Log In",
+                "redirect_to": f"{cfg.base_url}/my-account/",
+                "testcookie": "1",
+            },
+            headers={
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Referer": f"{cfg.base_url}/wp-login.php",
+                "Origin": cfg.base_url,
+            },
+        )
+        log.info("[auth] wp-login HTTP %s → %s", r.status_code, r.url)
+
+        has_cookie = any(
+            c.name.startswith("wordpress_logged_in")
+            for c in client.cookies.jar
+        )
+        # Authoritative check: /my-account/ must render the logged-in view.
+        r2 = client.get("/my-account/")
+        logged_in = bool(re.search(
+            r'<body[^>]*class="[^"]*\blogged-in\b', r2.text
+        ))
+
+        if not (has_cookie and logged_in):
+            if "login_error" in r.text or "incorrect" in r.text.lower():
+                raise AuthError("wp-login.php rejected credentials")
+            if not has_cookie:
+                raise AuthError("no wordpress_logged_in cookie set")
+            raise AuthError(
+                "cookie present but /my-account/ still shows login form"
+            )
+
+        log.info("[auth] logged in as %s", cfg.username)
+        return client.cookies
+    finally:
+        client.close()
 
 # ─────────────────────────────────────────────────────────────────
 # Logging
@@ -313,6 +388,7 @@ class PhillipsClient:
         self._clock_offset: float = 0.0
         self._offset_samples: list[float] = []
         self._clock_lock = threading.Lock()
+        self._nonce_lock = threading.Lock()  
 
     def sync_clock(self) -> None:
         t0 = time.time()
@@ -374,10 +450,46 @@ class PhillipsClient:
 
         m = re.search(r'data-finish-time="(\d+)"', r.text)
         if not m:
-            self.log.error("data-finish-time not found in HTML (%s)", slug)
-            return None
+            # Fallback for testing: pretend the auction closes in 2 minutes.
+            self.log.warning("data-finish-time not in HTML (%s); "
+                             "falling back to now+120s", slug)
+            return int(time.time()) + 120
 
         return int(m.group(1))
+
+    _NONCE_RE = re.compile(r'"add_bid"\s*:\s*"([a-f0-9]+)"')
+
+    def refresh_nonce(self, slug: str) -> Optional[str]:
+        """
+        Fetch the product page with the *authenticated* client and
+        scrape the add_bid nonce. Returns the nonce, or None.
+        """
+        try:
+            r = self.http_auth.get(
+                f"/product/{slug}/",
+                headers={
+                    "Accept": "text/html,application/xhtml+xml",
+                    "Referer": f"{self.cfg.base_url}/",
+                },
+            )
+        except httpx.HTTPError as e:
+            self.log.warning("[nonce] fetch failed (%s): %s", slug, e)
+            return None
+
+        if r.status_code != 200:
+            self.log.warning("[nonce] product page HTTP %s (%s)",
+                             r.status_code, slug)
+            return None
+
+        m = self._NONCE_RE.search(r.text)
+        if not m:
+            self.log.warning("[nonce] add_bid not found in HTML (%s)", slug)
+            return None
+
+        nonce = m.group(1)
+        with self._nonce_lock:
+            self.cfg.nonce = nonce
+        return nonce
 
     def read_store_timed(
         self, product_id: int, lat: Optional[Latencies] = None
@@ -463,7 +575,7 @@ def fire_bid(
     t0 = time.perf_counter()
     try:
         r = client.http_auth.post(
-            "/wp-admin/admin-ajax",
+            "/wp-admin/admin-ajax.php",
             data=body,
             headers=headers,
         )
@@ -552,7 +664,27 @@ def run_endgame(
             continue
 
         if state != "Bid now":
-            log.info("%s auction closed (state=%s)", vehicle.label, state)
+            if not cfg.force_bid:
+                log.info("%s auction closed (state=%s)", vehicle.label, state)
+                break
+            # Forced mode: fire one bid and exit, regardless of state.
+            amount = min(current + cfg.increment, vehicle.max_bid)
+            log.warning(
+                "%s FORCE-BID: state=%s, firing %s anyway",
+                vehicle.label, state, f"{amount:,}",
+            )
+            resp, elapsed = fire_bid(client, cfg, vehicle, amount, lat, db)
+            if resp is None:
+                log.warning(
+                    "%s force fire %s → no response (%.3fs)",
+                    vehicle.label, f"{amount:,}", elapsed,
+                )
+            else:
+                log.info(
+                    "%s force fire %s → raw response: %s (%.3fs)",
+                    vehicle.label, f"{amount:,}",
+                    json.dumps(resp, ensure_ascii=False), elapsed,
+                )
             break
 
         # ── Check propagation of a prior bid ─────────────────────
@@ -645,6 +777,82 @@ def run_endgame(
             bid_count += 1
             last_bid_at = client.server_now()
 
+            # Closed-auction short-circuit: YITH returns {"url": ...}
+            # instead of {"success": ...} when the auction is not
+            # accepting bids anymore.
+            # ── Classify the response ────────────────────────────────
+            # YITH's success shape is a flat object:
+            #   {"user_id": 24, "product_id": "56922", "bid": "65000.00",
+            #    "date": "2026-10-16 09:12:12", "url": ".../product/<slug>/"}
+            # Failure shapes we care about:
+            #   {"success": false, "data": {"message": "..."}}   → explicit reject
+            #   {"url": ".../my-account/..."}                    → session expired
+            # Anything else is unrecognized and should be logged loudly,
+            # not silently interpreted as "closed".
+
+            is_success = (
+                resp is not None
+                and "user_id" in resp
+                and "bid" in resp
+            )
+
+            is_session_expired = (
+                resp is not None
+                and "url" in resp
+                and "/my-account/" in str(resp.get("url", ""))
+            )
+
+            is_explicit_failure = (
+                resp is not None
+                and resp.get("success") is False
+            )
+
+            # ── Act on the classification ────────────────────────────
+            if resp is None:
+                log.warning(
+                    "%s fire %s (%s) → no response (%.3fs)",
+                    vehicle.label, f"{amount:,}", reason, elapsed,
+                )
+                # last_bid NOT updated — the bid did not land.
+
+            elif is_session_expired:
+                log.error(
+                    "%s fire %s (%s) → session expired, redirect to %s — stopping; raw=%s",
+                    vehicle.label, f"{amount:,}", reason,
+                    resp.get("url"), json.dumps(resp, ensure_ascii=False),
+                )
+                break
+
+            elif is_explicit_failure:
+                log.warning(
+                    "%s fire %s (%s) → rejected: %s (%.3fs)",
+                    vehicle.label, f"{amount:,}", reason,
+                    json.dumps(resp.get("data"), ensure_ascii=False), elapsed,
+                )
+                # Bid was refused by the server. Keep looping — the state
+                # may change, or the rejection may be transient.
+
+            elif is_success:
+                log.info(
+                    "%s fire %s (%s) → success user_id=%s bid=%s (%.3fs) url=%s",
+                    vehicle.label, f"{amount:,}", reason,
+                    resp.get("user_id"), resp.get("bid"), elapsed,
+                    resp.get("url"),
+                )
+                last_bid = amount
+                pending_propagation_at = client.server_now()
+                pending_propagation_amount = amount
+
+            else:
+                # Unknown shape. Log the whole thing and stop — we don't
+                # want to keep firing into an unrecognized state.
+                log.warning(
+                    "%s fire %s (%s) → UNRECOGNIZED response (%.3fs); raw=%s",
+                    vehicle.label, f"{amount:,}", reason, elapsed,
+                    json.dumps(resp, ensure_ascii=False),
+                )
+                break
+                
             if resp is None:
                 log.warning(
                     "%s fire %s (%s) → no response (%.3fs)",
@@ -653,8 +861,9 @@ def run_endgame(
             else:
                 success = bool(resp.get("success", False))
                 log.info(
-                    "%s fire %s (%s) → success=%s (%.3fs)",
+                    "%s fire %s (%s) → success=%s (%.3fs) data=%s",
                     vehicle.label, f"{amount:,}", reason, success, elapsed,
+                    json.dumps(resp.get("data"), ensure_ascii=False),
                 )
                 if success:
                     last_bid = amount
@@ -744,6 +953,10 @@ def vehicle_worker(
         # One more clock sync before the endgame.
         client.sync_clock()
 
+        if not client.refresh_nonce(vehicle.slug):
+            log.error("%s no add_bid nonce — aborting", vehicle.label)
+            return
+
         run_endgame(client, cfg, vehicle, finish_ts, log, db=db)
 
         if db and vehicle.armed_bid_id:
@@ -776,13 +989,23 @@ def parse_args() -> Config:
     p.add_argument("--slug2", type=str, default=None)
     p.add_argument("--max2", type=int, default=None)
 
-    p.add_argument("--nonce", type=str, required=True)
-    p.add_argument("--cookie", type=str, required=True)
+    # Authentication.
+    #   Primary path: username + password. The sniper logs in via
+    #   wp-login.php at startup, harvests the session cookies, and
+    #   scrapes the add_bid nonce from the product page.
+    #   Escape hatch: --cookie, which bypasses login entirely.
+    #   If --cookie is given, --user/--pass are not required.
+    p.add_argument("--user", type=str, default=None)
+    p.add_argument("--pass", dest="password", type=str, default=None)
+    p.add_argument("--cookie", type=str, default=None,
+                   help="Optional. If set, skip login and use this "
+                        "Cookie header verbatim. Useful when wp-login.php "
+                        "is blocked or the site is mid-deploy.")
+
     p.add_argument("--db-path", type=str, default="database/database.sqlite")
 
-    # Strategy tuning. Defaults match the Config dataclass, so passing
-    # nothing here keeps the current behavior.
-    p.add_argument("--base-url",         type=str, default="http://localhost:9000")
+    # Strategy tuning. Defaults match the Config dataclass.
+    p.add_argument("--base-url",         type=str, default="https://phillipsauctioneers.co.ke")
     p.add_argument("--increment",        type=int, default=5000)
     p.add_argument("--poll-quiet-ms",    type=int, default=200)
     p.add_argument("--poll-contest-ms",  type=int, default=50)
@@ -790,7 +1013,24 @@ def parse_args() -> Config:
     p.add_argument("--tail-safety-ms",   type=int, default=150)
     p.add_argument("--tail-min-ms",      type=int, default=300)
 
+    p.add_argument("--force-bid", action="store_true",
+                help="Skip the 'Bid now' state gate and fire one bid "
+                    "anyway. For testing against closed auctions.")
+
     a = p.parse_args()
+
+    # ── Auth mode resolution ────────────────────────────────────
+    if a.cookie:
+        # Cookie override wins. Credentials become optional.
+        auth_mode = "cookie"
+    elif a.user and a.password:
+        auth_mode = "login"
+    else:
+        sys.exit(
+            "authentication required: pass --user and --pass, or --cookie "
+            "(or both; --cookie takes precedence)"
+        )
+    # ── end auth resolution ─────────────────────────────────────
 
     if a.max1 % a.increment != 0:
         sys.exit(f"max1 must be a multiple of {a.increment}")
@@ -833,16 +1073,23 @@ def parse_args() -> Config:
         base_url=a.base_url,
         increment=a.increment,
         vehicles=vehicles,
-        nonce=a.nonce,
-        cookie=a.cookie,
+        # Auth fields. `nonce` is no longer supplied by the operator —
+        # it's harvested at runtime and written into the Config by
+        # PhillipsClient.refresh_nonce().
+        username=a.user or "",
+        password=a.password or "",
+        cookie=a.cookie or "",
+        auth_mode=auth_mode,
+        nonce="",
         db_path=Path(a.db_path),
         poll_quiet_ms=a.poll_quiet_ms,
         poll_contest_ms=a.poll_contest_ms,
         contest_window_s=float(a.contest_window_s),
         tail_safety_ms=a.tail_safety_ms,
         tail_min_ms=a.tail_min_ms,
+        force_bid=a.force_bid,
     )
-
+    
 def main() -> None:
     cfg = parse_args()
     log = setup_logger(cfg)
@@ -855,11 +1102,84 @@ def main() -> None:
 
     db = Db(cfg.db_path, log)
     client = PhillipsClient(cfg, log)
-
     try:
+        # ── 1. Authenticate ─────────────────────────────────────
+        # Two paths, chosen by parse_args and reported via
+        # cfg.auth_mode:
+        #   "login"  — hit wp-login.php, harvest cookies.
+        #   "cookie" — operator pasted a live Cookie header; skip
+        #              the login POST entirely.
+        if cfg.auth_mode == "cookie":
+            log.info("[auth] mode=cookie (operator-supplied header)")
+            installed = 0
+            for pair in cfg.cookie.split(";"):
+                if "=" not in pair:
+                    continue
+                name, _, value = pair.strip().partition("=")
+                if not name:
+                    continue
+                client.http_auth.cookies.set(
+                    name, value,
+                    domain=cfg.base_url.split("//", 1)[-1].split("/", 1)[0],
+                )
+                installed += 1
+            if installed == 0:
+                log.error("[auth] --cookie parsed to zero cookies; aborting")
+                sys.exit(2)
+            log.info("[auth] %d cookies installed on http_auth "
+                     "(from --cookie)", installed)
+
+            # Sanity check: the cookie must actually be live. Hit
+            # /my-account/ on the authenticated client and look for
+            # the logged-in body class. If it fails, bail now rather
+            # than discovering it mid-endgame.
+            try:
+                r = client.http_auth.get("/my-account/")
+                if not re.search(
+                    r'<body[^>]*class="[^"]*\blogged-in\b', r.text
+                ):
+                    log.error(
+                        "[auth] --cookie supplied but /my-account/ still "
+                        "shows the login form — cookie is stale or wrong"
+                    )
+                    sys.exit(2)
+                log.info("[auth] cookie verified against /my-account/")
+            except httpx.HTTPError as e:
+                log.error("[auth] verification fetch failed: %s", e)
+                sys.exit(2)
+
+        elif cfg.auth_mode == "login":
+            log.info("[auth] mode=login (wp-login.php)")
+            try:
+                cookies = login_and_get_cookies(cfg, log)
+            except AuthError as e:
+                log.error("[auth] %s", e)
+                log.error(
+                    "[auth] hint: retry with --cookie '<browser Cookie header>' "
+                    "if wp-login.php is blocked"
+                )
+                sys.exit(2)
+
+            # Transplant harvested cookies into the authenticated
+            # client. The anonymous reader (client.http) stays
+            # anonymous — that's the whole point of the two clients.
+            for c in cookies.jar:
+                client.http_auth.cookies.jar.set_cookie(c)
+            log.info("[auth] %d cookies installed on http_auth "
+                     "(from login)", len(client.http_auth.cookies.jar))
+
+        else:
+            log.error("[auth] unknown auth_mode=%r — refusing to run",
+                      cfg.auth_mode)
+            sys.exit(2)
+
+        # ── 2. Clock sync ───────────────────────────────────────
+        # Both calls are on the anonymous client; login state is
+        # irrelevant to the Date header we're sampling.
         client.sync_clock()
         client.sync_clock()
 
+        # ── 3. Spawn one thread per vehicle ─────────────────────
         threads: list[threading.Thread] = []
         for v in cfg.vehicles:
             t = threading.Thread(
@@ -881,7 +1201,6 @@ def main() -> None:
         db.close()
 
     log.info("done")
-
 
 if __name__ == "__main__":
     main()
