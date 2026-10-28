@@ -145,6 +145,12 @@ function initChart() {
             vertLine: { color: "#64748b", style: 3 },
             horzLine: { color: "#64748b", style: 3 },
         },
+        // Let a vertical swipe over the chart scroll the page on touch
+        // devices instead of being captured by the chart. Horizontal
+        // dragging still pans the time axis.
+        handleScroll: {
+            vertTouchDrag: false,
+        },
         autoSize: true,
     });
 
@@ -424,16 +430,21 @@ function fmtTime(unix: number): string {
 <template>
     <Head :title="vehicle?.name ?? 'Vehicle'" />
 
-    <div class="mx-auto max-w-7xl space-y-5 p-6">
-        <header class="flex items-start justify-between gap-4">
+    <div class="mx-auto max-w-7xl space-y-4 p-3 sm:space-y-5 sm:p-6">
+        <header
+            class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+        >
             <div class="min-w-0">
                 <Link
                     href="/"
-                    class="text-xs text-muted-foreground hover:text-foreground"
+                    class="inline-block py-1 text-xs text-muted-foreground hover:text-foreground"
                 >
                     ← Back to auctions
                 </Link>
-                <h1 class="mt-1 truncate text-2xl font-semibold tracking-tight">
+                <!-- Wraps on mobile; truncates on wider screens -->
+                <h1
+                    class="mt-1 text-xl font-semibold leading-snug tracking-tight sm:truncate sm:text-2xl"
+                >
                     {{ vehicle?.name ?? "Loading…" }}
                 </h1>
                 <p class="text-xs text-muted-foreground">
@@ -441,14 +452,17 @@ function fmtTime(unix: number): string {
                 </p>
             </div>
 
-            <div class="flex items-center gap-4">
+            <div
+                class="flex items-center justify-between gap-4 sm:justify-end"
+            >
                 <button
-                    class="rounded border px-2.5 py-1 text-xs transition-colors"
+                    class="min-h-9 rounded border px-3 py-1 text-xs transition-colors sm:min-h-0 sm:px-2.5"
                     :class="
                         vehicle?.watched
                             ? 'border-amber-500 text-amber-400'
                             : 'text-muted-foreground hover:text-foreground'
                     "
+                    :aria-pressed="!!vehicle?.watched"
                     @click="toggleWatched"
                 >
                     {{ vehicle?.watched ? "★ Starred" : "☆ Star this" }}
@@ -456,7 +470,7 @@ function fmtTime(unix: number): string {
 
                 <div class="text-right">
                     <div
-                        class="font-mono text-3xl font-semibold tracking-tight"
+                        class="font-mono text-2xl font-semibold tracking-tight sm:text-3xl"
                         :class="{ 'text-amber-400': crossedWatch }"
                     >
                         {{ fmt(vehicle?.current_price) }}
@@ -484,54 +498,57 @@ function fmtTime(unix: number): string {
         </p>
 
         <!-- Stat strip -->
-        <section class="grid grid-cols-2 gap-3 md:grid-cols-5">
-            <div class="rounded border p-3">
+        <section
+            class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-5"
+        >
+            <div class="rounded border p-2.5 sm:p-3">
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     Started at
                 </div>
-                <div class="font-mono text-lg">
+                <div class="font-mono text-base sm:text-lg">
                     {{ fmt(vehicle?.base_price) }}
                 </div>
             </div>
-            <div class="rounded border p-3">
+            <div class="rounded border p-2.5 sm:p-3">
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     Highest so far
                 </div>
-                <div class="font-mono text-lg text-emerald-400">
+                <div class="font-mono text-base text-emerald-400 sm:text-lg">
                     {{ fmt(dayHigh) }}
                 </div>
             </div>
-            <div class="rounded border p-3">
+            <div class="rounded border p-2.5 sm:p-3">
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     Lowest so far
                 </div>
-                <div class="font-mono text-lg text-rose-400">
+                <div class="font-mono text-base text-rose-400 sm:text-lg">
                     {{ fmt(dayLow) }}
                 </div>
             </div>
-            <div class="rounded border p-3">
+            <div class="rounded border p-2.5 sm:p-3">
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     Bids placed
                 </div>
-                <div class="font-mono text-lg">
+                <div class="font-mono text-base sm:text-lg">
                     {{ vehicle?.bid_count ?? "—" }}
                 </div>
             </div>
-            <div class="rounded border p-3">
+            <!-- Spans the full row on the 2-column mobile grid so it isn't orphaned -->
+            <div class="col-span-2 rounded border p-2.5 sm:col-span-1 sm:p-3">
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     Closes in
                 </div>
-                <div class="font-mono text-lg">
+                <div class="font-mono text-base sm:text-lg">
                     {{ timeLeft(vehicle?.seconds_left ?? null) }}
                 </div>
             </div>
@@ -594,13 +611,16 @@ function fmtTime(unix: number): string {
                 </div>
 
                 <div class="flex items-center gap-2 sm:self-start">
+                    <!-- Full width on mobile; text-base (16px) stops iOS zooming on focus -->
                     <input
                         v-model="watchPriceDraft"
                         type="text"
                         inputmode="numeric"
                         autocomplete="off"
                         placeholder="my max"
-                        class="w-36 rounded border bg-background px-2 py-1.5 text-right font-mono text-sm"
+                        aria-label="My max budget"
+                        enterkeyhint="done"
+                        class="w-full rounded border bg-background px-2 py-2 text-right font-mono text-base sm:w-36 sm:py-1.5 sm:text-sm"
                         :class="{ 'border-amber-500': crossedWatch }"
                         @focus="onBudgetFocus"
                         @blur="onBudgetBlur"
@@ -611,8 +631,10 @@ function fmtTime(unix: number): string {
         </section>
 
         <!-- Chart -->
-        <section class="rounded border p-3">
-            <div class="mb-3 flex items-center justify-between">
+        <section class="rounded border p-2 sm:p-3">
+            <div
+                class="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between"
+            >
                 <div
                     class="text-xs uppercase tracking-wide text-muted-foreground"
                 >
@@ -622,7 +644,7 @@ function fmtTime(unix: number): string {
                     <button
                         v-for="t in chartTypes"
                         :key="t.value"
-                        class="rounded px-2.5 py-1 text-xs transition-colors"
+                        class="min-h-8 flex-1 rounded px-2.5 py-1 text-xs transition-colors sm:flex-none"
                         :class="
                             chartType === t.value
                                 ? 'bg-sky-600 text-white'
@@ -635,7 +657,7 @@ function fmtTime(unix: number): string {
                 </div>
             </div>
 
-            <div ref="container" class="h-[440px] w-full"></div>
+            <div ref="container" class="h-[300px] w-full sm:h-[440px]"></div>
 
             <div
                 v-if="loading && !candles.length"
@@ -652,16 +674,23 @@ function fmtTime(unix: number): string {
         </section>
 
         <!-- Recent price table -->
-        <section v-if="recent.length" class="overflow-hidden rounded border">
+        <!-- On small screens Open/High/Low are hidden so the rest fits without side-scrolling -->
+        <section v-if="recent.length" class="overflow-x-auto rounded border">
             <table class="w-full text-sm">
                 <thead class="bg-muted text-muted-foreground">
                     <tr>
                         <th class="p-2 text-left">Time</th>
-                        <th class="p-2 text-right">Open</th>
-                        <th class="p-2 text-right">High</th>
-                        <th class="p-2 text-right">Low</th>
+                        <th class="hidden p-2 text-right sm:table-cell">
+                            Open
+                        </th>
+                        <th class="hidden p-2 text-right sm:table-cell">
+                            High
+                        </th>
+                        <th class="hidden p-2 text-right sm:table-cell">
+                            Low
+                        </th>
                         <th class="p-2 text-right">Close</th>
-                        <th class="p-2 text-right">Total moved</th>
+                        <th class="p-2 text-right">Moved</th>
                         <th class="p-2 text-right">Bids</th>
                     </tr>
                 </thead>
@@ -670,13 +699,19 @@ function fmtTime(unix: number): string {
                         <td class="p-2 font-mono text-muted-foreground">
                             {{ fmtTime(c.time) }}
                         </td>
-                        <td class="p-2 text-right font-mono">
+                        <td
+                            class="hidden p-2 text-right font-mono sm:table-cell"
+                        >
                             {{ fmt(c.open) }}
                         </td>
-                        <td class="p-2 text-right font-mono text-emerald-400">
+                        <td
+                            class="hidden p-2 text-right font-mono text-emerald-400 sm:table-cell"
+                        >
                             {{ fmt(c.high) }}
                         </td>
-                        <td class="p-2 text-right font-mono text-rose-400">
+                        <td
+                            class="hidden p-2 text-right font-mono text-rose-400 sm:table-cell"
+                        >
                             {{ fmt(c.low) }}
                         </td>
                         <td class="p-2 text-right font-mono text-sky-300">
