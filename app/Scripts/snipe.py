@@ -166,7 +166,7 @@ class VehicleTarget:
 class Config:
     base_url: str = "https://phillipsauctioneers.co.ke"
     vehicles: list[VehicleTarget] = field(default_factory=list)
-    increment: int = 5000
+    increment: int = 5500
 
     # Auth. Populated by parse_args; nonce is overwritten at runtime
     # by PhillipsClient.refresh_nonce().

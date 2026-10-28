@@ -30,8 +30,8 @@ import httpx
 
 BASE_URL = "https://phillipsauctioneers.co.ke"
 
-USERNAME = "kodembe@yahoo.com"
-PASSWORD = "maurice@otieno"
+USERNAME = "Sire"
+PASSWORD = "dsDE#%GDssrui!RF2345"
 
 # One or more vehicles. product_id is the WooCommerce product id;
 # slug is the product page slug; max_bid is the hard ceiling (KES).
@@ -39,7 +39,7 @@ VEHICLES = [
     {
         "product_id": 57045,
         "slug":       "kcq-444m-range-rover-evogue-2",
-        "max_bid":    300000,
+        "max_bid":    70000,
     },
     # Add more dicts here to snipe more vehicles concurrently:
     # {"product_id": 56441, "slug": "kds-974y-isuzu-frr90", "max_bid": 800000},

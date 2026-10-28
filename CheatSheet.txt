@@ -1,0 +1,77 @@
+maurice@otieno
+
+kodembe@yahoo.com
+
+ernestotieno95@gmail.com
+
+Ernest#2019.
+
+
+python app/Scripts/proxy_bid.py \
+    --armed-bid-id1 10 --vehicle-id1 10 \
+    --product1 56922 --slug1 kde-429z-subaru-forester --max1 465000 \
+    --armed-bid-id2 13 --vehicle-id2 12 \
+    --product2 56920 --slug2 kdw-500l-mercedes-vito --max2 920000 \
+    --user kodembe@yahoo.com --pass 'maurice@otieno' \
+    --db-path /home/wanjohi/Code/Web/phillips-bot/database/database.sqlite \
+    --force-bid
+
+
+python app/Scripts/snipe.py \
+    --armed-bid-id1 12 --vehicle-id1 5 \
+    --product1 56438 --slug1 kdk-156x-mercedes-benz-actros --max1 150000 \
+    --armed-bid-id2 13 --vehicle-id2 6 \
+    --product2 56441 --slug2 kds-974y-isuzu-frr90 --max2 80000 \
+    --user ernestotieno95@gmail.com --pass 'Ernest#2019.' \
+    --db-path /home/wanjohi/Code/Web/phillips-bot/database/database.sqlite
+    --force-bid
+
+
+python app/Scripts/proxy_bid.py \
+    --base-url https://phillipsauctioneers.co.ke \
+    --armed-bid-id1 10 --vehicle-id1 10 \
+    --product1 56922 --slug1 kde-429z-subaru-forester --max1 525000 \
+    --armed-bid-id2 13 --vehicle-id2 12 \
+    --product2 56920 --slug2 kdw-500l-mercedes-vito --max2 1800000 \
+    --user kodembe@yahoo.com --pass 'maurice@otieno' \
+    --db-path /home/wanjohi/Code/Web/phillips-bot/database/database.sqlite \
+    --arm-window-s 1200
+
+
+
+
+
+    .venv/bin/python app/Scripts/snipe_3.py \
+      --user ernestotieno95@gmail.com --pass 'Ernest#2019.' \
+      --v1 57026 kdk-156x-mercedes-actros 65000 \
+      --v2 57027 kdq-644r-faw-380hp    65000 \
+      --v3 57030 kcg-005l-isuzu-frr33      65000 \
+      --db-path /home/wanjohi/Code/Web/phillips-bot/database/bids.sqlite \
+      --end-time 2026-10-28T08:45:00Z \
+      --increment 5000 --arm-window-s 90
+
+
+    .venv/bin/python app/Scripts/snipe_3.py \
+      --user ernestotieno95@gmail.com --pass 'Ernest#2019.' \
+      --v1 57026 kdk-156x-mercedes-actros 65000 \
+      --v2 57027 kdq-644r-faw-380hp    65000 \
+      --v3 57030 kcg-005l-isuzu-frr33      65000 \
+      --db-path /home/wanjohi/Code/Web/phillips-bot/database/bids.sqlite \
+      --end-time 2026-10-28T09:58:00Z \
+      --increment 5000 --arm-window-s 120
+
+
+
+    .venv/bin/python app/Scripts/snipe_3.py \
+      --user Sire --pass 'dsDE#%GDssrui!RF2345' \
+      --v1 57026 kdk-156x-mercedes-actros 50000 \
+      --v2 57027 kdq-644r-faw-380hp    50000 \
+      --v3 57030 kcg-005l-isuzu-frr33      50000 \
+      --db-path /home/wanjohi/Code/Web/phillips-bot/database/bids.sqlite \
+      --increment 5000 --arm-window-s 120
+
+
+
+      
+
+      postid
