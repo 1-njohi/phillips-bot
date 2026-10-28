@@ -13,8 +13,19 @@ import { useBudgetAlerts } from "@/composables/useBudgetAlerts";
 import { fmt, timeLeft } from "@/lib/format";
 import type { VehicleRow } from "@/types/auction";
 
-const { state, error, refreshRoster, toggleWatch, setWatchPrice } =
-    useAuctionState();
+/*
+ * NOTE: the composable needs to expose pausePolling / resumePolling.
+ * See the notes after this file for a sketch of that change.
+ */
+const {
+    state,
+    error,
+    refreshRoster,
+    toggleWatch,
+    setWatchPrice,
+    pausePolling,
+    resumePolling,
+} = useAuctionState();
 
 /* ---------- Budget alerts (toasts + sound) ---------- */
 
@@ -31,6 +42,22 @@ type BudgetStatus = "unset" | "healthy" | "tight" | "close" | "over";
 const sortKey = ref<SortKey>("finish");
 const sortDir = ref<"asc" | "desc">("asc");
 const filter = ref<FilterKey>("all");
+
+const filterLabels: Record<FilterKey, string> = {
+    all: "All",
+    watched: "Starred",
+    moving: "Moving",
+    quiet: "Quiet",
+};
+const filterKeys: FilterKey[] = ["all", "watched", "moving", "quiet"];
+
+const sortLabels: Record<SortKey, string> = {
+    finish: "Closes in",
+    price: "Current price",
+    delta: "Last 10 min",
+    velocity: "Moving at",
+    headroom: "Budget room",
+};
 
 /* ---------- Show details toggle (persisted) ---------- */
 
@@ -88,8 +115,8 @@ function budgetLabel(v: VehicleRow): string {
 
 /* ---------- Rows: filter + sort ---------- */
 
-const rows = computed(() => {
-    let list = [...state.value.vehicles];
+function filterAndSort(source: VehicleRow[]): VehicleRow[] {
+    let list = [...source];
 
     if (filter.value === "watched") list = list.filter((v) => v.watched);
     if (filter.value === "moving")
@@ -113,7 +140,54 @@ const rows = computed(() => {
     });
 
     return list;
+}
+
+const liveRows = computed(() => filterAndSort(state.value.vehicles));
+
+/* ---------- Freeze ---------- */
+
+/*
+ * While frozen we pin the ORDER (a list of ids), but still render each
+ * row from the current state. That way:
+ *  - rows never jump around, even if a stray poll lands,
+ *  - starring / setting a budget still shows up immediately.
+ */
+const frozen = ref(false);
+const frozenIds = ref<VehicleRow["id"][]>([]);
+const frozenAt = ref<Date | null>(null);
+
+function pinOrder() {
+    frozenIds.value = liveRows.value.map((v) => v.id);
+}
+
+function setFrozen(next: boolean) {
+    if (next === frozen.value) return;
+    frozen.value = next;
+
+    if (next) {
+        pinOrder();
+        frozenAt.value = new Date();
+        pausePolling();
+    } else {
+        frozenIds.value = [];
+        frozenAt.value = null;
+        resumePolling();
+    }
+}
+
+const rows = computed<VehicleRow[]>(() => {
+    if (!frozen.value) return liveRows.value;
+
+    const byId = new Map(state.value.vehicles.map((v) => [v.id, v]));
+    return frozenIds.value
+        .map((id) => byId.get(id))
+        .filter((v): v is VehicleRow => v !== undefined);
 });
+
+function setFilter(f: FilterKey) {
+    filter.value = f;
+    if (frozen.value) pinOrder();
+}
 
 function setSort(k: SortKey) {
     if (sortKey.value === k) {
@@ -122,6 +196,12 @@ function setSort(k: SortKey) {
         sortKey.value = k;
         sortDir.value = k === "finish" ? "asc" : "desc";
     }
+    if (frozen.value) pinOrder();
+}
+
+function toggleSortDir() {
+    sortDir.value = sortDir.value === "asc" ? "desc" : "asc";
+    if (frozen.value) pinOrder();
 }
 
 function sortArrow(k: SortKey): string {
@@ -129,15 +209,17 @@ function sortArrow(k: SortKey): string {
     return sortDir.value === "asc" ? " ↑" : " ↓";
 }
 
-/* ---------- Budget popover ---------- */
+/* ---------- Budget popover / bottom sheet ---------- */
 
 const POPOVER_WIDTH = 240;
+const MOBILE_BREAKPOINT = 640;
 
 interface PopoverState {
     vehicle: VehicleRow;
     draft: string;
     x: number;
     y: number;
+    sheet: boolean;
 }
 
 const popover = ref<PopoverState | null>(null);
@@ -146,6 +228,7 @@ const popoverInputFocused = ref(false);
 
 function openBudgetPopover(v: VehicleRow, event: MouseEvent) {
     const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    const sheet = window.innerWidth < MOBILE_BREAKPOINT;
 
     let x = rect.left;
     if (x + POPOVER_WIDTH > window.innerWidth - 8) {
@@ -165,6 +248,7 @@ function openBudgetPopover(v: VehicleRow, event: MouseEvent) {
         draft: v.watch_price != null ? String(v.watch_price) : "",
         x,
         y,
+        sheet,
     };
 
     nextTick(() => {
@@ -222,10 +306,12 @@ function onEscape(e: KeyboardEvent) {
 
 function onScroll() {
     if (!popover.value) return;
-    // A poll-triggered re-render can fire scroll events. Don't close the
-    // popover while the user is typing — that's the whole point of the
-    // freeze.
+    // The mobile keyboard and poll-triggered re-renders can fire scroll
+    // events. Don't close the popover while the user is typing.
     if (popoverInputFocused.value) return;
+    // The bottom sheet is fixed to the screen, so scrolling doesn't
+    // detach it from anything.
+    if (popover.value.sheet) return;
     closePopover();
 }
 
@@ -239,6 +325,8 @@ onBeforeUnmount(() => {
     document.removeEventListener("click", onDocumentClick);
     document.removeEventListener("keydown", onEscape);
     window.removeEventListener("scroll", onScroll, true);
+    // Don't leave polling paused if the user navigates away while frozen.
+    if (frozen.value) resumePolling();
 });
 
 /* ---------- Misc helpers ---------- */
@@ -253,6 +341,11 @@ function velocityText(v: number | null): string {
     if (v === 0) return "no change";
     const perHour = Math.round(v * 60);
     return `${perHour > 0 ? "+" : ""}${perHour.toLocaleString()}/hr`;
+}
+
+function deltaText(v: number | null): string {
+    if (v == null) return "—";
+    return (v > 0 ? "+" : "") + fmt(v);
 }
 
 function severityClass(s: string): string {
@@ -300,20 +393,24 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
     <Head title="Auction Monitor" />
 
     <div>
-        <div class="mx-auto max-w-[1400px] space-y-5 p-6">
+        <div class="mx-auto max-w-[1400px] space-y-4 p-3 sm:space-y-5 sm:p-6">
             <!-- Header -->
-            <header class="flex items-center justify-between">
+            <header
+                class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+            >
                 <div>
-                    <h1 class="text-2xl font-semibold tracking-tight">
+                    <h1
+                        class="text-xl font-semibold tracking-tight sm:text-2xl"
+                    >
                         Auction Monitor
                     </h1>
                     <p class="text-xs text-muted-foreground">
                         Watch the prices move. No bids are ever placed for you.
                     </p>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex flex-wrap items-center gap-2">
                     <button
-                        class="rounded border px-2 py-1.5 text-sm hover:bg-muted"
+                        class="min-h-9 rounded border px-2.5 py-1.5 text-sm hover:bg-muted"
                         :title="
                             soundEnabled
                                 ? 'Mute budget alerts'
@@ -330,18 +427,57 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                     </button>
                     <Link
                         href="/analytics"
-                        class="rounded border px-3 py-1.5 text-sm hover:bg-muted"
+                        class="inline-flex min-h-9 items-center rounded border px-3 py-1.5 text-sm hover:bg-muted"
                     >
                         Insights →
                     </Link>
                     <button
-                        class="rounded bg-sky-600 px-3 py-1.5 text-sm text-white hover:bg-sky-500"
+                        class="min-h-9 rounded border px-3 py-1.5 text-sm"
+                        :class="
+                            frozen
+                                ? 'border-amber-400 bg-amber-500/20 text-amber-300 hover:bg-amber-500/30'
+                                : 'hover:bg-muted'
+                        "
+                        :aria-pressed="frozen"
+                        :title="
+                            frozen
+                                ? 'Resume live updates'
+                                : 'Pause updates so the list stays put'
+                        "
+                        @click="setFrozen(!frozen)"
+                    >
+                        {{ frozen ? "▶ Unfreeze" : "❄ Freeze" }}
+                    </button>
+                    <button
+                        class="min-h-9 rounded bg-sky-600 px-3 py-1.5 text-sm text-white hover:bg-sky-500 disabled:cursor-not-allowed disabled:opacity-40"
+                        :disabled="frozen"
+                        :title="frozen ? 'Unfreeze to refresh' : undefined"
                         @click="refreshRoster"
                     >
                         Refresh auctions
                     </button>
                 </div>
             </header>
+
+            <!-- Frozen banner -->
+            <div
+                v-if="frozen"
+                class="sticky top-0 z-30 flex items-center justify-between gap-3 rounded border border-amber-500/60 bg-amber-950/80 px-3 py-2 text-sm text-amber-200 backdrop-blur"
+                role="status"
+            >
+                <span>
+                    ❄ Frozen<span v-if="frozenAt">
+                        since {{ frozenAt.toLocaleTimeString() }}</span
+                    >
+                    — prices are paused. You can still star and set budgets (You will be notified here when the budget is exceeded by other bidders).
+                </span>
+                <button
+                    class="shrink-0 rounded border border-amber-400 px-2.5 py-1 text-xs hover:bg-amber-500/20"
+                    @click="setFrozen(false)"
+                >
+                    Unfreeze
+                </button>
+            </div>
 
             <p
                 v-if="error"
@@ -351,8 +487,10 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
             </p>
 
             <!-- System status -->
-            <section class="grid grid-cols-2 gap-3 md:grid-cols-5">
-                <div class="rounded border p-3">
+            <section
+                class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 md:grid-cols-5"
+            >
+                <div class="rounded border p-2.5 sm:p-3">
                     <div class="text-xs uppercase tracking-wide text-muted-foreground">
                         Live auctions
                     </div>
@@ -360,7 +498,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                         {{ state.health.total_open }}
                     </div>
                 </div>
-                <div class="rounded border p-3">
+                <div class="rounded border p-2.5 sm:p-3">
                     <div class="text-xs uppercase tracking-wide text-muted-foreground">
                         Haven't updated
                     </div>
@@ -371,7 +509,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                         {{ state.health.stale_polls }}
                     </div>
                 </div>
-                <div class="rounded border p-3">
+                <div class="rounded border p-2.5 sm:p-3">
                     <div class="text-xs uppercase tracking-wide text-muted-foreground">
                         Had a problem
                     </div>
@@ -382,7 +520,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                         {{ state.health.errored }}
                     </div>
                 </div>
-                <div class="rounded border p-3">
+                <div class="rounded border p-2.5 sm:p-3">
                     <div class="text-xs uppercase tracking-wide text-muted-foreground">
                         In progress
                     </div>
@@ -390,7 +528,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                         {{ state.health.queue_depth }}
                     </div>
                 </div>
-                <div class="rounded border p-3">
+                <div class="rounded border p-2.5 sm:p-3">
                     <div class="text-xs uppercase tracking-wide text-muted-foreground">
                         Time sync
                     </div>
@@ -404,47 +542,207 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
             <div class="grid grid-cols-1 gap-5 lg:grid-cols-[1fr_340px]">
                 <!-- Roster -->
                 <section class="min-w-0 lg:min-h-[520px]">
-                    <div
-                        class="mb-2 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between"
-                    >
-                        <h2
-                            class="text-sm uppercase tracking-wide text-muted-foreground"
-                        >
-                            Auctions
-                        </h2>
-                        <div class="flex flex-wrap items-center gap-2">
-                            <div class="flex gap-1 rounded border p-0.5">
-                                <button
-                                    v-for="f in (['all', 'watched', 'moving', 'quiet'] as FilterKey[])"
-                                    :key="f"
-                                    class="rounded px-2 py-0.5 text-xs capitalize"
-                                    :class="
-                                        filter === f
-                                            ? 'bg-sky-600 text-white'
-                                            : 'text-muted-foreground hover:text-foreground'
-                                    "
-                                    @click="filter = f"
-                                >
-                                    {{
-                                        {
-                                            all: "All",
-                                            watched: "Starred",
-                                            moving: "Moving",
-                                            quiet: "Quiet",
-                                        }[f]
-                                    }}
-                                </button>
-                            </div>
+                    <div class="mb-2 flex flex-col gap-2">
+                        <div class="flex items-center justify-between gap-2">
+                            <h2
+                                class="text-sm uppercase tracking-wide text-muted-foreground"
+                            >
+                                Auctions
+                            </h2>
                             <button
-                                class="rounded border px-2.5 py-1 text-xs text-muted-foreground hover:text-foreground"
+                                class="min-h-8 rounded border px-2.5 py-1 text-xs text-muted-foreground hover:text-foreground"
                                 @click="setShowDetails(!showDetails)"
                             >
                                 {{ showDetails ? "Hide details" : "Show details" }}
                             </button>
                         </div>
+
+                        <div class="flex flex-wrap items-center gap-2">
+                            <div class="flex gap-1 rounded border p-0.5">
+                                <button
+                                    v-for="f in filterKeys"
+                                    :key="f"
+                                    class="min-h-8 rounded px-2.5 py-0.5 text-xs"
+                                    :class="
+                                        filter === f
+                                            ? 'bg-sky-600 text-white'
+                                            : 'text-muted-foreground hover:text-foreground'
+                                    "
+                                    @click="setFilter(f)"
+                                >
+                                    {{ filterLabels[f] }}
+                                </button>
+                            </div>
+
+                            <!-- Sort control (mobile only; desktop sorts via table headers) -->
+                            <div class="flex items-center gap-1 md:hidden">
+                                <label class="sr-only" for="sort-select">
+                                    Sort by
+                                </label>
+                                <select
+                                    id="sort-select"
+                                    class="min-h-8 rounded border bg-background px-2 py-1 text-base sm:text-xs"
+                                    :value="sortKey"
+                                    @change="
+                                        setSort(
+                                            ($event.target as HTMLSelectElement)
+                                                .value as SortKey,
+                                        )
+                                    "
+                                >
+                                    <option
+                                        v-for="(label, k) in sortLabels"
+                                        :key="k"
+                                        :value="k"
+                                    >
+                                        {{ label }}
+                                    </option>
+                                </select>
+                                <button
+                                    class="min-h-8 rounded border px-2 py-1 text-xs"
+                                    :aria-label="
+                                        sortDir === 'asc'
+                                            ? 'Ascending'
+                                            : 'Descending'
+                                    "
+                                    @click="toggleSortDir"
+                                >
+                                    {{ sortDir === "asc" ? "↑" : "↓" }}
+                                </button>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="overflow-x-auto rounded border">
+                    <!-- Mobile: card list -->
+                    <div class="space-y-2 md:hidden">
+                        <div
+                            v-for="v in rows"
+                            :key="v.id"
+                            class="rounded border p-3"
+                            :class="{ 'bg-amber-950/20': v.is_quiet }"
+                        >
+                            <div class="flex items-start justify-between gap-2">
+                                <div class="flex min-w-0 items-start gap-2">
+                                    <button
+                                        class="-ml-1 flex h-9 w-9 shrink-0 items-center justify-center text-xl leading-none"
+                                        :class="
+                                            v.watched
+                                                ? 'text-amber-400'
+                                                : 'text-muted-foreground/40'
+                                        "
+                                        :aria-label="
+                                            v.watched
+                                                ? 'Remove star'
+                                                : 'Star this auction'
+                                        "
+                                        :aria-pressed="!!v.watched"
+                                        @click="toggleWatch(v)"
+                                    >
+                                        ★
+                                    </button>
+                                    <Link
+                                        :href="`/vehicles/${v.wp_id}`"
+                                        class="min-w-0 pt-1.5 text-sm font-medium leading-snug hover:text-sky-400"
+                                    >
+                                        {{ v.name }}
+                                    </Link>
+                                </div>
+                                <Link
+                                    :href="`/vehicles/${v.wp_id}`"
+                                    class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded border border-sky-400 text-sky-400 hover:bg-muted"
+                                    aria-label="Open auction"
+                                >
+                                    →
+                                </Link>
+                            </div>
+
+                            <div class="mt-2 flex items-end justify-between gap-3">
+                                <div>
+                                    <div class="font-mono text-lg leading-none">
+                                        {{ fmt(v.current_price) }}
+                                    </div>
+                                    <div
+                                        class="mt-1 font-mono text-xs text-muted-foreground"
+                                    >
+                                        {{ deltaText(v.delta_10m) }} · 10 min
+                                    </div>
+                                </div>
+                                <svg
+                                    v-if="v.sparkline.length > 1"
+                                    viewBox="0 0 80 24"
+                                    preserveAspectRatio="none"
+                                    class="h-6 w-20 shrink-0 text-sky-400"
+                                >
+                                    <path
+                                        :d="sparkPath(v.sparkline)"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                    />
+                                </svg>
+                                <div class="text-right">
+                                    <div
+                                        class="text-[10px] uppercase tracking-wide text-muted-foreground"
+                                    >
+                                        Closes in
+                                    </div>
+                                    <div class="font-mono text-sm">
+                                        {{ timeLeft(v.seconds_left) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                v-if="showDetails"
+                                class="mt-2 grid grid-cols-2 gap-2 border-t pt-2 text-xs"
+                            >
+                                <div>
+                                    <div class="text-muted-foreground">
+                                        Moving at
+                                    </div>
+                                    <div
+                                        class="font-mono"
+                                        :class="velocityClass(v.velocity_15m)"
+                                    >
+                                        {{ velocityText(v.velocity_15m) }}
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="text-muted-foreground">
+                                        Likely to end
+                                    </div>
+                                    <div class="font-mono">
+                                        {{ fmt(v.projected_close) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-2 border-t pt-2">
+                                <button
+                                    data-budget-badge
+                                    class="min-h-8 w-full text-left text-sm"
+                                    :class="budgetBadgeClass(budgetStatus(v))"
+                                    @click.stop="openBudgetPopover(v, $event)"
+                                >
+                                    {{ budgetLabel(v) }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            v-if="!rows.length"
+                            class="rounded border p-6 text-center text-sm text-muted-foreground"
+                        >
+                            {{
+                                filter === "all"
+                                    ? "Nothing here yet — hit Refresh to load the auctions."
+                                    : "No auctions match this filter."
+                            }}
+                        </div>
+                    </div>
+
+                    <!-- Desktop / tablet: table -->
+                    <div class="hidden overflow-x-auto rounded border md:block">
                         <table class="w-full min-w-[760px] text-sm">
                             <thead class="bg-muted text-muted-foreground">
                                 <tr>
@@ -549,12 +847,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                                     <td
                                         class="p-2 text-right font-mono text-muted-foreground"
                                     >
-                                        {{
-                                            v.delta_10m == null
-                                                ? "—"
-                                                : (v.delta_10m > 0 ? "+" : "") +
-                                                  fmt(v.delta_10m)
-                                        }}
+                                        {{ deltaText(v.delta_10m) }}
                                     </td>
                                     <td
                                         v-if="showDetails"
@@ -613,7 +906,7 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                         </h2>
 
                         <div
-                            class="nice-scrollbar rounded border lg:min-h-0 lg:flex-1 lg:overflow-y-auto"
+                            class="nice-scrollbar max-h-80 overflow-y-auto rounded border lg:max-h-none lg:min-h-0 lg:flex-1"
                         >
                             <ul v-if="state.events.length" class="divide-y">
                                 <li
@@ -651,20 +944,42 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
             </div>
         </div>
 
-        <!-- Budget popover -->
+        <!-- Budget popover (desktop) / bottom sheet (mobile) -->
         <Teleport to="body">
+            <div
+                v-if="popover && popover.sheet"
+                class="fixed inset-0 z-40 bg-black/50"
+                @click.stop="closePopover"
+            ></div>
+
             <div
                 v-if="popover"
                 data-budget-popover
-                class="fixed z-50 w-60 rounded border bg-background p-3 shadow-xl"
-                :style="{ top: popover.y + 'px', left: popover.x + 'px' }"
+                class="fixed z-50 border bg-background shadow-xl"
+                :class="
+                    popover.sheet
+                        ? 'inset-x-0 bottom-0 rounded-t-xl p-4 pb-[max(1rem,env(safe-area-inset-bottom))]'
+                        : 'w-60 rounded p-3'
+                "
+                :style="
+                    popover.sheet
+                        ? undefined
+                        : { top: popover.y + 'px', left: popover.x + 'px' }
+                "
                 @click.stop
             >
                 <div
                     class="mb-2 text-xs uppercase tracking-wide text-muted-foreground"
                 >
                     My max budget
+                    <span
+                        v-if="popover.sheet"
+                        class="mt-0.5 block normal-case tracking-normal text-foreground/80"
+                    >
+                        {{ popover.vehicle.name }}
+                    </span>
                 </div>
+                <!-- text-base (16px) stops iOS from zooming the page on focus -->
                 <input
                     ref="popoverInput"
                     v-model="popover.draft"
@@ -672,25 +987,32 @@ function sparkPath(prices: number[], width = 80, height = 24): string {
                     inputmode="numeric"
                     autocomplete="off"
                     placeholder="e.g. 2000000"
-                    class="w-full rounded border bg-background px-2 py-1 text-right font-mono text-sm"
+                    class="w-full rounded border bg-background px-2 py-1.5 text-right font-mono text-base sm:py-1 sm:text-sm"
                     @focus="popoverInputFocused = true"
                     @blur="popoverInputFocused = false"
                     @keydown.enter="saveBudget"
                     @keydown.escape="closePopover"
                 />
-                <div class="mt-2 flex items-center justify-between gap-2">
+                <div class="mt-3 flex items-center justify-between gap-2">
                     <button
-                        class="rounded bg-sky-600 px-2.5 py-1 text-xs text-white hover:bg-sky-500"
+                        class="min-h-9 rounded bg-sky-600 px-4 py-1 text-sm text-white hover:bg-sky-500 sm:min-h-0 sm:px-2.5 sm:text-xs"
                         @click="saveBudget"
                     >
                         Save
                     </button>
                     <button
                         v-if="popover.vehicle.watch_price"
-                        class="text-xs text-rose-400 hover:underline"
+                        class="min-h-9 px-2 text-sm text-rose-400 hover:underline sm:min-h-0 sm:text-xs"
                         @click="clearBudget"
                     >
                         clear
+                    </button>
+                    <button
+                        v-if="popover.sheet"
+                        class="min-h-9 px-2 text-sm text-muted-foreground"
+                        @click="closePopover"
+                    >
+                        Cancel
                     </button>
                 </div>
             </div>
